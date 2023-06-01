@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React,{useState,useEffect} from "react";
 import Header from "../assets/svg/headerx.svg";
 import TM from "../assets/svg/tm.svg";
@@ -7078,7 +7079,7 @@ const interval = setInterval(() => {
               {/* bacic end here */}
             </div>
           </div>
-          <div
+          {/* <div
             className="warning-overlay flex-column flex-center py-1 px-2 on-top"
             data-v-721cc652=""
           >
@@ -7184,7 +7185,7 @@ const interval = setInterval(() => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </main>
       </div>
     </div>
