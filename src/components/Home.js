@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React,{useState,useEffect} from "react";
 import Header from "../assets/svg/headerx.svg";
@@ -6,7 +8,7 @@ import WhiteArrowLeft from "../assets/svg/white-arrow-left.svg";
 import BobaHash from "../assets/svg/bobaHash.svg";
 import CircleStar from "../assets/svg/circleStar.svg";
 import Logo from "../assets/svg/logo.svg";
-import Rotate from "../assets/svg/rotate-deco.svg";
+// import Rotate from "../assets/svg/rotate-deco.svg";
 import "./content.css";
 import "../../src/index.css";
 
@@ -203,16 +205,16 @@ const interval = setInterval(() => {
     "--xl": "100%",
     "--xxl": "100%",
   };
-  const stylesE1 = {
-    "--align": "center",
-    "--align-mobile": "center",
-    "--xs": "113.99999999999999%",
-    "--sm": "113.99999999999999%",
-    "--md": "113.99999999999999%",
-    "--lg": "113.99999999999999%",
-    "--xl": "113.99999999999999%",
-    "--xxl": "113.99999999999999%",
-  };
+//   const stylesE1 = {
+//     "--align": "center",
+//     "--align-mobile": "center",
+//     "--xs": "113.99999999999999%",
+//     "--sm": "113.99999999999999%",
+//     "--md": "113.99999999999999%",
+//     "--lg": "113.99999999999999%",
+//     "--xl": "113.99999999999999%",
+//     "--xxl": "113.99999999999999%",
+//   };
   const stylesE2 = {
     "--5f8288ba": "170.9422011084719vw",
   };
@@ -383,7 +385,7 @@ const interval = setInterval(() => {
             <a
               href="https://shop.bobaicecream.com/collections/frontpage/products/ice-cream-package"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener preferrer"
               className="text-center cursor-pointer follow-circle d-inline-block"
               data-v-4c4f7eb1
               style={{
@@ -1386,11 +1388,11 @@ const interval = setInterval(() => {
                         </g>
                         <g
                           id="black-bubble"
-                          class="black-bubble1"
+                          class="black-bubble1 common-svg-css"
                           data-v-8390fb7c=""
                           data-svg-origin="72.10759735107422 58.10759735107422"
                           transform="matrix(1,0,0,1,0,0)"
-                          class="common-svg-css"
+                          
                         >
                           <circle
                             id="Ellipse 595"
