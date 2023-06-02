@@ -11,9 +11,11 @@ import Logo from "../assets/svg/logo.svg";
 // import Rotate from "../assets/svg/rotate-deco.svg";
 import "./content.css";
 import "../../src/index.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [imageIndex, setImageIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0);
     const [count, setCount] = useState(1);
     const target = 6;
     const images = [
@@ -23,7 +25,49 @@ const Home = () => {
       "https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
       "https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
     ];
+ const slides = [
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(253, 205, 212)",
+   },
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(220, 33, 50)",
+   },
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(249, 219, 0)",
+   },
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(192, 154, 127)",
+   },
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(159, 76, 135)",
+   },
+   {
+     image:
+       "https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1560&q=80&&fm=webp&q=80",
+     backgroundColor: "rgb(174, 35, 58)",
+   },
+ ];
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+      }, 5000);
 
+      return () => {
+        clearInterval(interval);
+      };
+    }, []);
+
+    const currentSlide = slides[currentIndex];
     useEffect(() => {
       const interval = setInterval(() => {
         setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -368,13 +412,13 @@ const interval = setInterval(() => {
                 className="f5 f10-sm f10-2-1-xl d-flex col justify-content-end align-items-center gutter pp-bold"
                 data-v-582e57fe
               >
-                <a
-                  href="/our-story"
+                <Link
+                  to="/our-story"
                   className="text-uppercase link mx-0-75 no-wrap"
                   data-v-582e57fe
                 >
                   Our Story
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -524,10 +568,11 @@ const interval = setInterval(() => {
                   >
                     <div className="full-absolute z-4 " data-v-a772eacc=" ">
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute "
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(253, 205, 212)",
+                          //   backgroundColor: "rgb(253, 205, 212)",
                           zIndex: 16,
+                          backgroundColor: currentSlide.backgroundColor,
                         }}
                         data-v-8218c6fe=" "
                         data-v-a772eacc=" "
@@ -556,7 +601,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                <picture data-v-23b40a86=" ">
+                                {/* <picture data-v-23b40a86=" ">
                                   <source
                                     media="(min-width:1920px) "
                                     srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
@@ -593,17 +638,27 @@ const interval = setInterval(() => {
                                     alt="Strawberry Shortcake – Karaoke Night hero "
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
                                     data-v-23b40a86=" "
+                                    
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Strawberry Shortcake – Karaoke Night hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
                         </div>
                       </div>
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute "
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(220, 33, 50)",
+                          //   backgroundColor: "rgb(220, 33, 50)",
+                          backgroundColor: currentSlide.backgroundColor,
                           zIndex: 11,
                         }}
                         data-v-8218c6fe=" "
@@ -632,7 +687,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                <picture data-v-23b40a86=" ">
+                                {/* <picture data-v-23b40a86=" ">
                                   <source
                                     media="(min-width:1920px) "
                                     srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
@@ -669,17 +724,27 @@ const interval = setInterval(() => {
                                     alt="Mango Chamoy hero "
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
                                     data-v-23b40a86=" "
+                                    
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mango Chamoy hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
                         </div>
                       </div>
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute "
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(249, 219, 0)",
+                          //   backgroundColor: "rgb(249, 219, 0)",
+                          backgroundColor: currentSlide.backgroundColor,
                           zIndex: 12,
                         }}
                         data-v-8218c6fe=" "
@@ -708,7 +773,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                <picture data-v-23b40a86=" ">
+                                {/* <picture data-v-23b40a86=" ">
                                   <source
                                     media="(min-width:1920px) "
                                     srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
@@ -746,16 +811,25 @@ const interval = setInterval(() => {
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
                                     data-v-23b40a86=" "
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mango Chamoy hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
                         </div>
                       </div>
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute "
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(192, 154, 127)",
+                          //   backgroundColor: "rgb(192, 154, 127)",
+                          backgroundColor: currentSlide.backgroundColor,
                           zIndex: 13,
                         }}
                         data-v-8218c6fe=" "
@@ -784,7 +858,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                <picture data-v-23b40a86=" ">
+                                {/* <picture data-v-23b40a86=" ">
                                   <source
                                     media="(min-width:1920px) "
                                     srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
@@ -822,16 +896,25 @@ const interval = setInterval(() => {
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
                                     data-v-23b40a86=" "
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mango Chamoy hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
                         </div>
                       </div>
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute "
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(159, 76, 135)",
+                          //   backgroundColor: "rgb(159, 76, 135)",
+                          backgroundColor: currentSlide.backgroundColor,
                           zIndex: 14,
                         }}
                         data-v-8218c6fe=" "
@@ -860,7 +943,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                <picture data-v-23b40a86=" ">
+                                {/* <picture data-v-23b40a86=" ">
                                   <source
                                     media="(min-width:1920px) "
                                     srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
@@ -898,16 +981,25 @@ const interval = setInterval(() => {
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
                                     data-v-23b40a86=""
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mango Chamoy hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
                         </div>
                       </div>
                       <div
-                        className="hero-slide position-absolute hero-slide full-absolute"
+                        className="hero-slide position-absolute hero-slide full-absolute animated-background"
                         style={{
-                          backgroundColor: "rgb(174, 35, 58) ",
+                          //   backgroundColor: "rgb(174, 35, 58) ",
+                          backgroundColor: currentSlide.backgroundColor,
                           zIndex: 15,
                         }}
                         data-v-8218c6fe=""
@@ -936,7 +1028,7 @@ const interval = setInterval(() => {
                               data-v-8218c6fe=""
                             >
                               <div data-v-23b40a86="" className="">
-                                <picture data-v-23b40a86="">
+                                {/* <picture data-v-23b40a86="">
                                   <source
                                     media="(min-width:1920px)"
                                     srcset="
@@ -984,7 +1076,15 @@ const interval = setInterval(() => {
                                     className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
                                     data-v-23b40a86=""
                                   />
-                                </picture>
+                                </picture> */}
+                                <img
+                                  src={currentSlide.image}
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mango Chamoy hero "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
+                                  data-v-23b40a86=" "
+                                />
                               </div>
                             </figure>
                           </div>
@@ -1392,7 +1492,6 @@ const interval = setInterval(() => {
                           data-v-8390fb7c=""
                           data-svg-origin="72.10759735107422 58.10759735107422"
                           transform="matrix(1,0,0,1,0,0)"
-                          
                         >
                           <circle
                             id="Ellipse 595"
