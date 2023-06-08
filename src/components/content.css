@@ -1085,7 +1085,8 @@
 }
 
 .slide .image[data-v-ba35f45e] {
-    left: 50%;
+    /* left: 50%; */
+    left: 95%;
     top: 50%;
     z-index: 3;
     height: 9.35rem;
@@ -1158,12 +1159,13 @@
 
 .slide--prev .bg[data-v-ba35f45e] {
     transform: translateX(25vw);
-    opacity: 0
+    /* opacity: 0 */
 }
 
 .slide--prev .content-wrapper[data-v-ba35f45e] {
-    transform: translateX(15vw);
-    opacity: 0
+    /* transform: translateX(15vw); */
+    transform: translateX(25vw);
+    /* opacity: 0 */
 }
 
 @media(max-width:575.98px) {

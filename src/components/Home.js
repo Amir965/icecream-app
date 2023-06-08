@@ -5195,104 +5195,103 @@ const Home = () => {
                     className="slider-component bg-pink222"
                     data-v-791a2ac4=""
                   >
-                    <div className="swiper" data-v-791a2ac4="">
-                      <div
-                        className="swiper-container position-relative swiper-container-initialized swiper-container-horizontal"
-                        style={{ cursor: "grab" }}
+                    <div
+                      className="swiper-container position-relative swiper-container-initialized swiper-container-horizontal"
+                      style={{ cursor: "grab" }}
+                    >
+                      <Swiper
+                        modules={[Navigation, EffectFade]}
+                        navigation
+                        speed={900}
+                        slidesPerView={1}
+                        loop
                       >
-                        <Swiper
-                          modules={[Navigation, EffectFade]}
-                          navigation
-                          // effect={"fade"}
-                          speed={900}
-                          slidesPerView={1}
-                          loop
+                        <div
+                          className="swiper-wrapper"
+                          style={{
+                            transitionDuration: "0ms",
+                            transform: "translate3d(290.401px, 0px, 0px)",
+                          }}
                         >
-                          <div
-                            className="swiper-wrapper"
-                            style={{
-                              transitionDuration: "0ms",
-                              transform: "translate3d(290.401px, 0px, 0px)",
-                            }}
-                          >
-                            <SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--active swiper-slide-active"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
                               <div
-                                className="swiper-slide swiper-slide--active swiper-slide-active"
+                                data-id="waypoint-72"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--active"
+                                data-v-ba35f45e=""
                                 data-v-791a2ac4=""
-                                style={{ width: "100%" }}
+                                style={stylesE3}
                               >
                                 <div
-                                  data-id="waypoint-72"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--active"
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  className="should-animate2"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE3}
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                    style={{ transform: "translateX(25vw)" }}
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Strawberry Shortcake – Karaoke Night
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      The Next K-Pop Star is Here…
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      New York cheesecakes collaborate to create
+                                      the perfect tune. This velvety ice cream
+                                      comes alive with a melody of ruby-red
+                                      strawberry jam, panko bits, and brown
+                                      sugar boba.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Karaoke
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
+                                    data-fromy="200"
                                     data-dur="3"
                                     className="should-animate2"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE4}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Strawberry Shortcake – Karaoke Night
-                                      </h3>
                                       <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        The Next K-Pop Star is Here…
-                                      </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        New York cheesecakes collaborate to
-                                        create the perfect tune. This velvety
-                                        ice cream comes alive with a melody of
-                                        ruby-red strawberry jam, panko bits, and
-                                        brown sugar boba.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Karaoke
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
-                                      className="should-animate2"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE4}
+                                        className="position-absolute w-100 h-100 t-0 l-0"
                                         data-v-23b40a86=""
-                                        data-v-ba35f45e=""
                                       >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          {/* <picture data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
                                           <source
                                             media="(min-width:1920px)"
                                             srcset="
@@ -5332,1200 +5331,1199 @@ const Home = () => {
                                             className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
                                             data-v-23b40a86=""
                                           />
-                                        </picture> */}
-                                          <img
+                                        </picture>
+                                        {/* <img
                                             src="https://images.ctfassets.net/j8k8klriwj2h/3o3i4rPpiQPeimYk7ZkuRs/7e002577ba41dea3d3a59e702ce3d313/Strawberry_Shortcake.jpeg?h=481&w=611&q=80&&fl=progressive&q=80"
                                             draggable="false"
                                             loading="eager"
                                             alt="Strawberry Shortcake"
                                             className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
                                             data-v-23b40a86=""
-                                          />
-                                        </div>
-                                      </figure>
-                                    </div>
+                                          /> */}
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  className="image position-absolute"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    className="image position-absolute"
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    className="w-100 h-100 should-animate2"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100 should-animate2"
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2WVude1IMt8nuLJdKfeyOz/be712e51800cf96583597e8f9cc7deb6/Strawberry_Shortcake.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Strawberry Shortcake-min"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Strawberry Shortcake-min"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  className="should-animate2"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
-                                    className="should-animate2"
+                                    className="content-wrapper"
                                     data-v-ba35f45e=""
+                                    style={{ transform: "translateX(25vw)" }}
                                   >
-                                    <div
-                                      className="content-wrapper"
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
                                       data-v-ba35f45e=""
                                     >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Night
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        It’s the type of dessert that’ll make
-                                        you want
-                                        <br className="d-none d-sm-block d-lg-none" />
-                                        to&nbsp;get on
-                                        <br className="d-none d-lg-block" />
-                                        stage and sing your heart out.
-                                      </div>
+                                      Night
+                                    </h4>
+                                    <div
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
+                                      data-v-ba35f45e=""
+                                    >
+                                      It’s the type of dessert that’ll make you
+                                      want
+                                      <br className="d-none d-sm-block d-lg-none" />
+                                      to&nbsp;get on
+                                      <br className="d-none d-lg-block" />
+                                      stage and sing your heart out.
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--prev swiper-slide-next"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
                               <div
-                                className="swiper-slide swiper-slide--prev swiper-slide-next"
+                                data-id="waypoint-76"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                data-v-ba35f45e=""
                                 data-v-791a2ac4=""
-                                style={{ width: "100%" }}
+                                style={stylesE6}
                               >
                                 <div
-                                  data-id="waypoint-76"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE6}
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Gooey Fried Banana
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      There’s Rich. Then there’s Banana Rich.
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      We’re flying the G6 to give you an absurd
+                                      amount of Gooey Fried Bananas.
+                                      <br className="d-none d-sm-block" />
+                                      Caramelized banana ice cream, pastry
+                                      flakes, and brown sugar boba come together
+                                      for a dessert so decadent, you’ll be
+                                      balling at first bite.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Gooey Fried
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
+                                    data-fromy="200"
                                     data-dur="3"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE7}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Gooey Fried Banana
-                                      </h3>
                                       <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        There’s Rich. Then there’s Banana Rich.
-                                      </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        We’re flying the G6 to give you an
-                                        absurd amount of Gooey Fried Bananas.
-                                        <br className="d-none d-sm-block" />
-                                        Caramelized banana ice cream, pastry
-                                        flakes, and brown sugar boba come
-                                        together for a dessert so decadent,
-                                        you’ll be balling at first bite.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Gooey Fried
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE7}
+                                        className="position-absolute w-100 h-100 t-0 l-0"
                                         data-v-23b40a86=""
-                                        data-v-ba35f45e=""
                                       >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/17HSf4PCGyIXBmaH7pq6BD/954876939c93258717e49ef7b0a31621/Banana.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Banana"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Banana"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  className="image position-absolute"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    className="image position-absolute"
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    className="w-100 h-100"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100"
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/3ydyqcyl8IjvgGr4QOjjpv/7a5c997b7d2c5672bd006f46a7310d39/Gooey_Fried_Banana.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Fried-Banana"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Fried-Banana"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
+                                    className="content-wrapper"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper"
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
                                       data-v-ba35f45e=""
                                     >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Bananas
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Scoop yourself a bowl of this luxe
-                                        flavor before jetting off to your own
-                                        private island. Go bougie or go home!
-                                      </div>
+                                      Bananas
+                                    </h4>
+                                    <div
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Scoop yourself a bowl of this luxe flavor
+                                      before jetting off to your own private
+                                      island. Go bougie or go home!
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--prev"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
                               <div
-                                className="swiper-slide swiper-slide--prev"
+                                data-id="waypoint-80"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                data-v-ba35f45e=""
                                 data-v-791a2ac4=""
-                                style={{ width: "100%" }}
+                                style={stylesE8}
                               >
                                 <div
-                                  data-id="waypoint-80"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE8}
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Salted Ube &amp; S'mores
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Swipe right on Ooh-Bae.
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      The beloved purple treasure of the
+                                      Philippines, Ube, goes on a date with an
+                                      American campfire classic. Purple yam
+                                      flirts heavily with graham crackers, vegan
+                                      chocolate, and marshmallows, turning into
+                                      a ride-or-die love story like no other.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Ooh
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
+                                    data-fromy="200"
                                     data-dur="3"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE7}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Salted Ube &amp; S'mores
-                                      </h3>
                                       <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Swipe right on Ooh-Bae.
-                                      </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        The beloved purple treasure of the
-                                        Philippines, Ube, goes on a date with an
-                                        American campfire classic. Purple yam
-                                        flirts heavily with graham crackers,
-                                        vegan chocolate, and marshmallows,
-                                        turning into a ride-or-die love story
-                                        like no other.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Ooh
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE7}
+                                        className="position-absolute w-100 h-100 t-0 l-0"
                                         data-v-23b40a86=""
-                                        data-v-ba35f45e=""
                                       >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/4LnKbv7BrjwO0mXTm9G0ht/9f4f9f0f275883fb46bb82c0bd5862f5/Bae.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Bae"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Bae"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  className="image position-absolute"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    className="image position-absolute"
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    className="w-100 h-100"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100"
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Salted Ube Smores-min"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Salted Ube Smores-min"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
+                                    className="content-wrapper"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper"
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
                                       data-v-ba35f45e=""
                                     >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Bae
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Swipe right or you’ll miss out on this
-                                        <br className="d-none d-lg-block" />
-                                        match
-                                        <br className="d-block d-sm-none" />
-                                        made in
-                                        <br className="d-none d-sm-block d-lg-none" />
-                                        flavor heaven.
-                                      </div>
+                                      Bae
+                                    </h4>
+                                    <div
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Swipe right or you’ll miss out on this
+                                      <br className="d-none d-lg-block" />
+                                      match
+                                      <br className="d-block d-sm-none" />
+                                      made in
+                                      <br className="d-none d-sm-block d-lg-none" />
+                                      flavor heaven.
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--prev"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
                               <div
-                                className="swiper-slide swiper-slide--prev"
+                                data-id="waypoint-84"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                data-v-ba35f45e=""
                                 data-v-791a2ac4=""
-                                style={{ width: "100%" }}
+                                style={stylesE9}
                               >
                                 <div
-                                  data-id="waypoint-84"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE9}
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Mango Chamoy
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      If Thailand’s Full Moon Party was a
+                                      flavor.
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Get ready to be transported to the beaches
+                                      in Koh Phangan with this refreshing
+                                      dessert. Tangy mangos with hints of lime
+                                      and honey join flecks of chamoy candy for
+                                      a full-blown explosion of spicy, sweet,
+                                      and sour.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Full Moon
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
+                                    data-fromy="200"
                                     data-dur="3"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE7}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Mango Chamoy
-                                      </h3>
                                       <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        If Thailand’s Full Moon Party was a
-                                        flavor.
-                                      </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Get ready to be transported to the
-                                        beaches in Koh Phangan with this
-                                        refreshing dessert. Tangy mangos with
-                                        hints of lime and honey join flecks of
-                                        chamoy candy for a full-blown explosion
-                                        of spicy, sweet, and sour.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Full Moon
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE7}
+                                        className="position-absolute w-100 h-100 t-0 l-0"
                                         data-v-23b40a86=""
-                                        data-v-ba35f45e=""
                                       >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/79QhVRvwzjbReq4l3w8MgK/6463ce0c23dae5453be2b22e96fac8e9/Mango.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Mango"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Mango"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  className="image position-absolute"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    className="image position-absolute"
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    className="w-100 h-100"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100"
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/6kpjysvBK78pLbaVnrGl6x/968158796de59dea868a24a82aa6fe28/Mango_Chamoy.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Mango Chamoy-min"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Mango Chamoy-min"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
+                                    className="content-wrapper"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper"
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
                                       data-v-ba35f45e=""
                                     >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Party
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        It’s a party for your taste buds! A pint
-                                        of this will
-                                        <br className="d-block d-lg-none" />
-                                        have
-                                        <br className="d-none d-lg-block" />
-                                        you dancing all night long.
-                                      </div>
+                                      Party
+                                    </h4>
+                                    <div
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
+                                      data-v-ba35f45e=""
+                                    >
+                                      It’s a party for your taste buds! A pint
+                                      of this will
+                                      <br className="d-block d-lg-none" />
+                                      have
+                                      <br className="d-none d-lg-block" />
+                                      you dancing all night long.
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--prev"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
                               <div
-                                className="swiper-slide swiper-slide--prev"
+                                data-id="waypoint-88"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                data-v-ba35f45e=""
                                 data-v-791a2ac4=""
-                                style={{ width: "100%" }}
+                                style={stylesE10}
                               >
                                 <div
-                                  data-id="waypoint-88"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE10}
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Churro Raspberry
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Imagine Dipping a Crunchy Churro in…
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Sweet raspberry sauce that’s drizzled into
+                                      buttery Vietnamese cinnamon ice cream.
+                                      It’s a flavor pairing so intense, it’s
+                                      almost electric. Switch out your gaming
+                                      controller for a spoonful of this icy-cool
+                                      treat.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Fluffy Churro
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
+                                    data-fromy="200"
                                     data-dur="3"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE7}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Churro Raspberry
-                                      </h3>
                                       <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Imagine Dipping a Crunchy Churro in…
-                                      </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Sweet raspberry sauce that’s drizzled
-                                        into buttery Vietnamese cinnamon ice
-                                        cream. It’s a flavor pairing so intense,
-                                        it’s almost electric. Switch out your
-                                        gaming controller for a spoonful of this
-                                        icy-cool treat.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Fluffy Churro
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE7}
+                                        className="position-absolute w-100 h-100 t-0 l-0"
                                         data-v-23b40a86=""
-                                        data-v-ba35f45e=""
                                       >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
                             https://images.ctfassets.net/j8k8klriwj2h/2zKOQvqFfZqlc0o3gbVZDT/39cb4da8fde50ab3172599d4e9cf0d8e/raspberry.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
                           "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="raspberry"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="image position-absolute"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Churro Raspberry-min"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
-                                  </div>
-                                  <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      className="content-wrapper"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Raspberry
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Because once you taste the crunchy
-                                        toffee bits, pastry flakes, and brown
-                                        sugar boba, the sparks will fly.
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="raspberry"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
                                       </div>
-                                    </div>
+                                    </figure>
                                   </div>
                                 </div>
-                              </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                              <div
-                                className="swiper-slide swiper-slide--prev"
-                                data-v-791a2ac4=""
-                                style={{ width: "100%" }}
-                              >
                                 <div
-                                  data-id="waypoint-92"
-                                  className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                  className="image position-absolute"
                                   data-v-ba35f45e=""
-                                  data-v-791a2ac4=""
-                                  style={stylesE11}
                                 >
                                   <div
                                     data-preset="y"
                                     data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
+                                    className="w-100 h-100"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      className="content-wrapper d-flex flex-column align-items-center"
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
                                       data-v-ba35f45e=""
                                     >
-                                      <h3
-                                        className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Double Espresso
-                                      </h3>
-                                      <div
-                                        className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
-                                        data-v-ba35f45e=""
-                                      >
-                                        This…is a Work of Art
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Churro Raspberry-min"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
                                       </div>
-                                      <div
-                                        className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
-                                        data-v-ba35f45e=""
-                                      >
-                                        We sculpted crunchy mocha toffee chips
-                                        and swirled them into exotic Balinese
-                                        coffee to make a rich, espresso-style
-                                        ice cream canvas. Adding in boba, the
-                                        chewy tapioca pearls that originated
-                                        from Taiwan, it’s a masterpiece like no
-                                        other.
-                                      </div>
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        Takashi
-                                      </h4>
-                                    </div>
+                                    </figure>
                                   </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
                                   <div
-                                    className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                    className="content-wrapper"
                                     data-v-ba35f45e=""
                                   >
-                                    <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      data-fromy="200"
-                                      data-dur="3"
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden bg position-relative"
-                                        style={stylesE7}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div
-                                          className="position-absolute w-100 h-100 t-0 l-0"
-                                          data-v-23b40a86=""
-                                        >
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Double-espresso"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
-                                  </div>
-                                  <div
-                                    className="image position-absolute"
-                                    data-v-ba35f45e=""
-                                  >
+                                      Raspberry
+                                    </h4>
                                     <div
-                                      data-preset="y"
-                                      data-delay=".1"
-                                      className="w-100 h-100"
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
                                       data-v-ba35f45e=""
                                     >
-                                      <figure
-                                        className="spd overflow-hidden w-100 h-100 position-relative"
-                                        style={stylesE5}
-                                        data-v-23b40a86=""
-                                        data-v-ba35f45e=""
-                                      >
-                                        <div data-v-23b40a86="">
-                                          <picture data-v-23b40a86="">
-                                            <source
-                                              media="(min-width:1920px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:1200px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:768px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <source
-                                              media="(min-width:0px)"
-                                              srcset="
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                          "
-                                              data-v-23b40a86=""
-                                            />
-                                            <img
-                                              draggable="false"
-                                              loading="eager"
-                                              alt="Double Espresso-min"
-                                              className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                              data-v-23b40a86=""
-                                            />
-                                          </picture>
-                                        </div>
-                                      </figure>
-                                    </div>
-                                  </div>
-                                  <div
-                                    data-preset="y"
-                                    data-delay=".1"
-                                    data-fromy="50"
-                                    data-dur="3"
-                                    data-v-ba35f45e=""
-                                  >
-                                    <div
-                                      className="content-wrapper"
-                                      data-v-ba35f45e=""
-                                    >
-                                      <h4
-                                        className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
-                                        data-v-ba35f45e=""
-                                      >
-                                        muracoffee
-                                      </h4>
-                                      <div
-                                        className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
-                                        data-v-ba35f45e=""
-                                      >
-                                        A sincere tribute to a creative legend
-                                        in the world of Japanese pop art, this
-                                        flavor is a true original. Grab a
-                                        spoonful and be your own muse!
-                                      </div>
+                                      Because once you taste the crunchy toffee
+                                      bits, pastry flakes, and brown sugar boba,
+                                      the sparks will fly.
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </SwiperSlide>
-                          </div>
-                        </Swiper>
+                            </div>
+                          </SwiperSlide>
+                          <SwiperSlide>
+                            <div
+                              className="swiper-slide swiper-slide--prev"
+                              data-v-791a2ac4=""
+                              // style={{ width: "100%" }}
+                            >
+                              <div
+                                data-id="waypoint-92"
+                                className="synchronized-waypoint slide text-center text-uppercase pb-xl-2-75 d-flex flex-column align-items-center mb-0 mb-lg-0 slide--prev"
+                                data-v-ba35f45e=""
+                                data-v-791a2ac4=""
+                                style={stylesE11}
+                              >
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
+                                  <div
+                                    className="content-wrapper d-flex flex-column align-items-center"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h3
+                                      className="f4 f8-sm f8-lg f8-xl pp mb-2 mb-sm-4 mb-lg-1-5 mb-xl-2-75 pt-1 no-wrap"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Double Espresso
+                                    </h3>
+                                    <div
+                                      className="founders-bold f7 f11-sm f11-lg f11-xl mb-0-5"
+                                      data-v-ba35f45e=""
+                                    >
+                                      This…is a Work of Art
+                                    </div>
+                                    <div
+                                      className="f8 f12-sm f11-lg f11-xl lh-1 mx-auto mb-1-5 mb-lg-1 mb-xl-1-5 description px-1 px-sm-0"
+                                      data-v-ba35f45e=""
+                                    >
+                                      We sculpted crunchy mocha toffee chips and
+                                      swirled them into exotic Balinese coffee
+                                      to make a rich, espresso-style ice cream
+                                      canvas. Adding in boba, the chewy tapioca
+                                      pearls that originated from Taiwan, it’s a
+                                      masterpiece like no other.
+                                    </div>
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      Takashi
+                                    </h4>
+                                  </div>
+                                </div>
+                                <div
+                                  className="mx-auto px-xl-2-75 bg-image z-2 position-relative"
+                                  data-v-ba35f45e=""
+                                >
+                                  <div
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    data-fromy="200"
+                                    data-dur="3"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <figure
+                                      className="spd overflow-hidden bg position-relative"
+                                      style={stylesE7}
+                                      data-v-23b40a86=""
+                                      data-v-ba35f45e=""
+                                    >
+                                      <div
+                                        className="position-absolute w-100 h-100 t-0 l-0"
+                                        data-v-23b40a86=""
+                                      >
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=900&amp;q=80&amp;&amp;fm=webp&amp;q=80  1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=1170&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=370&amp;w=470&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=481&amp;w=611&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=309&amp;w=375&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/ebnld0ZLqGAoeEAZY529w/a23dc10d697866b9d6ca7834522a7344/Double-espresso.jpeg?h=402&amp;w=488&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Double-espresso"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
+                                  </div>
+                                </div>
+                                <div
+                                  className="image position-absolute"
+                                  data-v-ba35f45e=""
+                                >
+                                  <div
+                                    data-preset="y"
+                                    data-delay=".1"
+                                    className="w-100 h-100"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <figure
+                                      className="spd overflow-hidden w-100 h-100 position-relative"
+                                      style={stylesE5}
+                                      data-v-23b40a86=""
+                                      data-v-ba35f45e=""
+                                    >
+                                      <div data-v-23b40a86="">
+                                        <picture data-v-23b40a86="">
+                                          <source
+                                            media="(min-width:1920px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=330&amp;w=300&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=429&amp;w=390&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:1200px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=300&amp;w=270&amp;q=100&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=390&amp;w=351&amp;q=100&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:768px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=220&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=286&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <source
+                                            media="(min-width:0px)"
+                                            srcset="
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=309&amp;w=370&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
+                            https://images.ctfassets.net/j8k8klriwj2h/qOTblA0deFa4Me5CR3RXX/523f1dfc70a5ba0aea6b2136777bdf28/Double_Espresso.png?h=402&amp;w=481&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
+                          "
+                                            data-v-23b40a86=""
+                                          />
+                                          <img
+                                            draggable="false"
+                                            loading="eager"
+                                            alt="Double Espresso-min"
+                                            className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
+                                            data-v-23b40a86=""
+                                          />
+                                        </picture>
+                                      </div>
+                                    </figure>
+                                  </div>
+                                </div>
+                                <div
+                                  data-preset="y"
+                                  data-delay=".1"
+                                  data-fromy="50"
+                                  data-dur="3"
+                                  data-v-ba35f45e=""
+                                >
+                                  <div
+                                    className="content-wrapper"
+                                    data-v-ba35f45e=""
+                                  >
+                                    <h4
+                                      className="f1 f1-sm f1-xl ls-none headline2 mb-1 mb-lg-0 no-wrap headline"
+                                      data-v-ba35f45e=""
+                                    >
+                                      muracoffee
+                                    </h4>
+                                    <div
+                                      className="text mx-auto lh-1 f8 f12-sm f11-lg f11-xl text"
+                                      data-v-ba35f45e=""
+                                    >
+                                      A sincere tribute to a creative legend in
+                                      the world of Japanese pop art, this flavor
+                                      is a true original. Grab a spoonful and be
+                                      your own muse!
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        </div>
+
                         <span
                           className="swiper-notification"
                           aria-live="assertive"
                           aria-atomic="true"
                         ></span>
-                      </div>
+                      </Swiper>
                     </div>
 
                     <div
