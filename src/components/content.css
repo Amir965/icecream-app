@@ -46369,3 +46369,17 @@ button.swiper-pagination-bullet {
 .swiper-button-prev::after {
     display: none;
 }
+
+/* for small-batch rotation */
+
+.container-body {
+    height: 9000px;
+}
+
+.spinner {
+    width: 140px;
+    height: 140px;
+    background-color: cornflowerblue;
+    margin: auto;
+    margin-top: 55%;
+}

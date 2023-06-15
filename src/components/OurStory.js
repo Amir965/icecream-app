@@ -24,6 +24,10 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
+// import AOS from 'aos';
+// import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Fade } from 'react-reveal';
+
 const OurStory = () => {
   const [rotation, setRotation] = useState(0);
   const [isForward, setIsForward] = useState(true);
@@ -70,7 +74,15 @@ const OurStory = () => {
   };
 
   // for div slider
- 
+//  useEffect(() => {
+//   AOS.init({
+//     duration: 800, // Animation duration in milliseconds
+//     delay: 200, // Delay between animations in milliseconds
+//     easing: 'ease-in-out', // Easing function for animations
+//     once: true, // Only animate elements once, on first scroll
+//   });
+// }, []);
+
 
   const stylesMain = {
     "--white": "#f3efe6",
@@ -861,13 +873,14 @@ const OurStory = () => {
                         id="textpath1"
                         d="M407,658C469.406,532.58 565.916,426.652 685.804,351.988C805.691,277.325 944.261,236.85 1086.11,235.062C1227.96,233.274 1367.54,270.244 1489.33,341.861C1611.12,413.479 1710.35,516.94 1776,640.746"
                       ></path>
-                      <text data-v-791b065e="" fill="#FFB800">
+                      <text data-v-791b065e="" fill="#FFB800" >
                         <textPath
                           data-v-791b065e=""
-                          startOffset="24%"
+                          startOffset={"24%" }
                           text-anchor="middle"
                           xlinkHref="#textpath1"
                           className="curved-textpath1 pp-bold text-uppercase curvedHeadlineBig"
+                          // style={{ startOffset }}
                         >
                           Happiness
                         </textPath>
@@ -1078,7 +1091,9 @@ const OurStory = () => {
                         data-id="waypoint-245"
                         className="synchronized-waypoint overflow-hidden"
                       >
-                        <div
+                        
+                        <Fade bottom>
+                          <div
                           data-v-6dc35003=""
                           className="inner position-relative lh-1-05 color-red6 pp-bold text-center text-uppercase f3-3-xs f6-2-sm f3-2-xl"
                           style={{
@@ -1092,13 +1107,15 @@ const OurStory = () => {
                           Our promise
                           <br className="d-lg-none" />
                         </div>
+                        </Fade>
                       </div>
                       <div
                         data-v-6dc35003=""
                         data-id="waypoint-247"
                         className="synchronized-waypoint overflow-hidden"
                       >
-                        <div
+                        <Fade bottom>
+                          <div
                           data-v-6dc35003=""
                           className="inner position-relative on-top bottom-headline-offset pt-xl-1-25 color-red6 pp-bold text-center text-uppercase f1-3-xs f1-1-sm f1-0-xl"
                           style={{
@@ -1111,6 +1128,7 @@ const OurStory = () => {
                         >
                           deliver happiness.
                         </div>
+                        </Fade>
                       </div>
                     </div>
                   </div>
@@ -1980,7 +1998,9 @@ const OurStory = () => {
                         className="should-animate"
                         style={{ opacity: 1 }}
                       >
-                        <figure
+                        
+                        <Fade bottom>
+                          <figure
                           data-v-23b40a86=""
                           className="spd overflow-hidden image mx-auto position-relative"
                           style={stylesF6}
@@ -2029,6 +2049,7 @@ const OurStory = () => {
                             </picture>
                           </div>
                         </figure>
+                        </Fade>
                       </div>
                       <svg
                         data-v-16c2f99a=""
@@ -2232,13 +2253,15 @@ const OurStory = () => {
                     data-id="waypoint-269"
                     className="synchronized-waypoint overflow-hidden magic-font-offset"
                   >
-                    <div
+                    <Fade bottom>
+                      <div
                       data-v-6dc35003=""
                       className="inner position-relative text-uppercase color-red lh-1-05 f2-2 f3-1-sm f1-1-xl pp-bold"
                       style={{ opacity: 1 }}
                     >
                       A magical duo of boba
                     </div>
+                    </Fade>
                   </div>
                   <div className="position-relative mt-1">
                     {/* <div
@@ -2630,7 +2653,8 @@ const OurStory = () => {
                       />
                     </div> */}
                   </div>
-                  <div className="d-flex text-uppercase color-red f2-2 f3-1-sm f1-1-xl pp-bold pt-0-625 mb-0-25 mb-sm-0 pt-md-1 text-center ">
+                  <Fade bottom>
+<div className="d-flex text-uppercase color-red f2-2 f3-1-sm f1-1-xl pp-bold pt-0-625 mb-0-25 mb-sm-0 pt-md-1 text-center ">
                     <div className="mr-3 mr-md-7 mr-xl-13 position-relative ">
                       <div
                         data-v-6dc35003=" "
@@ -2773,6 +2797,8 @@ const OurStory = () => {
                       />
                     </div>
                   </div>
+                  </Fade>
+                  
                 </div>
                 <div
                   data-id="waypoint-287 "
@@ -4412,7 +4438,8 @@ const OurStory = () => {
                   data-id="waypoint-291 "
                   className="synchronized-waypoint team px-0-5 pt-xl-5-5 py-2 px-lg-1 position-relative bg-gray "
                 >
-                  <div
+                  <Fade bottom>
+                    <div
                     data-v-5a623b3d=" "
                     className="color-red text-center d-flex flex-column pp-bold text-uppercase lh-12 z-2 position-relative "
                   >
@@ -4450,6 +4477,7 @@ const OurStory = () => {
                       Things Up!
                     </span>
                   </div>
+                  </Fade>
 
                   <div data-v-5a623b3d=" " className="position-relative">
                     <button
@@ -7504,7 +7532,8 @@ const OurStory = () => {
                       data-v-20b31861=" "
                       className="hash-wrapper mb-3 mb-md-0 "
                     >
-                      <div
+                      <Fade bottom>
+                        <div
                         data-v-20b31861=" "
                         data-preset="y "
                         data-delay=".1 "
@@ -7538,6 +7567,7 @@ const OurStory = () => {
                           style={{ opacity: 1 }}
                         />
                       </div>
+                      </Fade>
                     </div>
                     <div data-v-20b31861=" " className="col-12 d-flex ">
                       <div
@@ -7802,66 +7832,77 @@ const OurStory = () => {
                     data-v-20b31861=" "
                     data-id="waypoint-361 "
                     className="synchronized-waypoint "
+                    
                   >
-                    <div
-                      data-v-20b31861=" "
+                    <Fade bottom>
+                      <div
+                      data-v-20b31861="ade-up"
                       data-preset="opacity,y "
                       data-delay=".1 "
                       className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate"
+                      data-aos="fade-up"
                       style={{ opacity: 1 }}
+                      
                     >
                       PROUDLY AAPI⁃OWNED! A PORTION OF THE PROCEEDS, OF EVERY
                       PINT SOLD, GOES TO SUPPORT AAPI COMMUNITIES IN NEED.
                     </div>
+                    </Fade>
                   </div>
                 </div>
-                <div
-                  data-v-709f7a56=" "
-                  data-id="waypoint-363 "
-                  className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2 "
+                 <div
+                  data-id="waypoint-116"
+                  className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
+                  data-v-709f7a56=""
                 >
-                  <div
-                    data-v-709f7a56=" "
-                    data-preset="y "
-                    data-delay=".2 "
-                    className="row justify-content-center justify-content-sm-between should-animate "
+                  <Fade bottom>
+                    <div
+                    data-preset="y"
+                    data-delay=".2"
+                    className="row justify-content-center justify-content-sm-between should-animate"
+                    data-v-709f7a56
                     style={{ opacity: 1 }}
+                    
                   >
                     <a
-                      data-v-709f7a56=" "
-                      href="/ "
-                      className="mb-1 mb-sm-0 logo-wrapper router-link-active "
+                      href="/"
+                      aria-current="page"
+                      className="mb-1 mb-sm-0 logo-wrapper router-link-exact-active router-link-active"
+                      data-v-709f7a56=""
+                      style={{ color: "#ea1b0e !important" }}
                     >
                       <img
-                        data-v-709f7a56=" "
                         src={Logo}
-                        width="172 "
-                        height="26 "
-                        alt="Boba Logo "
-                        className="logo "
+                        width="172"
+                        height="26"
+                        alt="Boba Logo"
+                        className="logo"
+                        data-v-709f7a56=""
                       />
                     </a>
                     <div
-                      data-v-709f7a56=" "
-                      className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom "
+                      className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom"
+                      data-v-709f7a56=""
                     >
                       <a
-                        data-v-709f7a56=" "
-                        href="/privacy-policy "
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap "
+                        href="/privacy-policy"
+                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                        data-v-709f7a56=""
                       >
                         Privacy Policy
                       </a>
                       <a
-                        data-v-709f7a56=" "
-                        href="/terms-and-conditions "
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap "
+                        href="/terms-and-conditions"
+                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                        data-v-709f7a56=""
                       >
                         Terms &amp; Conditions
                       </a>
                     </div>
                   </div>
+                  </Fade>
                 </div>
+                
               </div>
             </div>
           </div>

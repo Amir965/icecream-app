@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import Header from "../assets/svg/headerx.svg";
 import TM from "../assets/svg/tm.svg";
 import WhiteArrowLeft from "../assets/svg/white-arrow-left.svg";
@@ -18,10 +18,15 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
+import AOS from 'aos';
+// import 'aos/dist/aos.css';
+// import Lenis from "@studio-freight/lenis"
+import { Fade} from 'react-reveal';
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
+  // const scrollRef = useRef(null);
   const target = 6;
   const images = [
     "https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
@@ -111,8 +116,6 @@ const Home = () => {
     };
   }, []);
 
-  
-
   window.addEventListener("load", function () {
     const logoElement = document.querySelector(".headerX");
     logoElement.classList.add("rotate");
@@ -143,8 +146,26 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     }
   }
-
   window.addEventListener("scroll", handleScroll);
+
+  // for small-batch rotation
+  useEffect(() => {
+  AOS.init({
+    duration: 1000, // Animation duration in milliseconds
+    delay: 200, // Delay between animations in milliseconds
+    once: false,
+  });
+}, []);
+  
+  // for smooth scroll
+  // const handleSmoothScroll = () => {
+  //   Lenis.scrollTo(scrollRef.current, {
+  //     duration: 1000,
+  //     easing: 'easeInOutQuart',
+  //     offset: 0,
+  //   });
+  // };
+  
   const styles1 = {
     "--66144870": "rotate(40deg)",
     "--c9557f00": "rotate(-40deg)",
@@ -314,11 +335,10 @@ const Home = () => {
     "--316e7b7c": "#604442",
   };
 
-  
   return (
     <div>
-      <div>
-        <main>
+      <div >
+        <main >
           <div
             data-id="waypoint-10"
             className="synchronized-waypoint navigation px-0-875 px-sm-1-75 px-xl-2 py-0-75 py-lg-1-25 position-absolute t-0 l-0 w-100 on-top white"
@@ -331,6 +351,7 @@ const Home = () => {
               className="should-animate row align-items-center justify-content-between boba-text"
               data-v-582e57fe
               style={{ opacity: 1 }}
+              data-aos="fade-down"
             >
               <a
                 href="/"
@@ -599,46 +620,6 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                {/* <picture data-v-23b40a86=" ">
-                                  <source
-                                    media="(min-width:1920px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:1200px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:768px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:420px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:0px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/7CBhnYrVhy99PUjfY3peZ2/ad1f3746bfc654b19f6f27fac14238af/Boba_x_Ice_Cream_Strawberry.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <img
-                                    draggable="false "
-                                    loading="eager "
-                                    alt="Strawberry Shortcake – Karaoke Night hero "
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
-                                    data-v-23b40a86=" "
-                                    
-                                  />
-                                </picture> */}
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -685,46 +666,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                {/* <picture data-v-23b40a86=" ">
-                                  <source
-                                    media="(min-width:1920px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:1200px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:768px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:420px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:0px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/5Lso8VjH7uRCu9bv3kLjK9/376520c0a570d33422a7ae59d2d24a55/Boba_x_Ice_Cream_Mango.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <img
-                                    draggable="false "
-                                    loading="eager "
-                                    alt="Mango Chamoy hero "
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
-                                    data-v-23b40a86=" "
-                                    
-                                  />
-                                </picture> */}
+                               
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -771,45 +713,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                {/* <picture data-v-23b40a86=" ">
-                                  <source
-                                    media="(min-width:1920px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:1200px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:768px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:420px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:0px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/3W5W2yk2jbULRv1yTamjli/77e529d150811ed9ce12997c9c14c9b9/Boba_x_Ice_Cream_Banana.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <img
-                                    draggable="false "
-                                    loading="eager "
-                                    alt="Gooey Fried Banana hero "
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
-                                    data-v-23b40a86=" "
-                                  />
-                                </picture> */}
+                                
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -856,45 +760,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                {/* <picture data-v-23b40a86=" ">
-                                  <source
-                                    media="(min-width:1920px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:1200px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:768px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:420px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:0px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    1x, https://images.ctfassets.net/j8k8klriwj2h/2Zl30O4YWEJChOS2MIgMN8/52572654d3fe4ba241a80bfa75a67dd8/Boba_x_Ice_Cream_Muracoffee.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <img
-                                    draggable="false "
-                                    loading="eager "
-                                    alt="Double Espresso hero "
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center "
-                                    data-v-23b40a86=" "
-                                  />
-                                </picture> */}
+                                
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -941,45 +807,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                {/* <picture data-v-23b40a86=" ">
-                                  <source
-                                    media="(min-width:1920px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:1200px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:768px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-    https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:420px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <source
-                                    media="(min-width:0px) "
-                                    srcset=" https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1OjxEwoD5tTfRWuEMzPKyt/e7b2f8dc1ce2a88eb170ed5c2bb43aba/Boba_x_Ice_Cream_UBE.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80
-    2x "
-                                    data-v-23b40a86=" "
-                                  />
-                                  <img
-                                    draggable="false "
-                                    loading="eager "
-                                    alt="Salted Ube &amp; S 'mores hero"
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                    data-v-23b40a86=""
-                                  />
-                                </picture> */}
+                                
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -1026,55 +854,7 @@ const Home = () => {
                               data-v-8218c6fe=""
                             >
                               <div data-v-23b40a86="" className="">
-                                {/* <picture data-v-23b40a86="">
-                                  <source
-                                    media="(min-width:1920px)"
-                                    srcset="
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                    "
-                                    data-v-23b40a86=""
-                                  />
-                                  <source
-                                    media="(min-width:1200px)"
-                                    srcset="
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                    "
-                                    data-v-23b40a86=""
-                                  />
-                                  <source
-                                    media="(min-width:768px)"
-                                    srcset="
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1200&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=1560&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                    "
-                                    data-v-23b40a86=""
-                                  />
-                                  <source
-                                    media="(min-width:420px)"
-                                    srcset="
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=768&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=998&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                    "
-                                    data-v-23b40a86=""
-                                  />
-                                  <source
-                                    media="(min-width:0px)"
-                                    srcset="
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=420&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x,
-                      https://images.ctfassets.net/j8k8klriwj2h/3R4DGEkjMI6ORb3ieGZeov/529982783301b739116f5f88fea2cde2/Boba_x_Ice_Cream_PikaChurro.png?w=546&amp;q=80&amp;&amp;fm=webp&amp;q=80 2x
-                    "
-                                    data-v-23b40a86=""
-                                  />
-                                  <img
-                                    draggable="false"
-                                    loading="eager"
-                                    alt="Churro hero"
-                                    className="w-100 h-100 position-absolute t-0 l-0 picture contain bg-center"
-                                    data-v-23b40a86=""
-                                  />
-                                </picture> */}
+                                
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -3309,17 +3089,20 @@ const Home = () => {
                     className="synchronized-waypoint headline position-absolute w-100 on-top "
                     data-v-8390fb7c=" "
                   >
+                     <Fade bottom>
                     <h2
                       data-preset="opacity,y "
                       data-delay=".1 "
                       className="f1-custom f2-sm f1-4-xl color-red d-flex flex-column text-center w-100 pp-bold should-animate name-a-more"
                       data-v-8390fb7c=" "
                       style={{ opacity: 1 }}
+                      data-aos="fade-up"
                     >
                       <span data-v-8390fb7c=" ">NAME</span>
                       <span data-v-8390fb7c=" ">A MORE</span>
                       <span data-v-8390fb7c=" ">ICONIC DUO</span>
-                    </h2>
+                      </h2>
+                      </Fade>
                   </div>
                 </div>
                 <div className="ctf-rays-component">
@@ -3363,6 +3146,7 @@ const Home = () => {
                         ></rect>
                       </svg>
                     </div>
+                    <Fade bottom>
                     <div data-v-7743ff1f="">
                       <svg
                         viewBox="0 0 2713 3360"
@@ -3490,6 +3274,7 @@ const Home = () => {
                               transformOrigin: "0px 0px",
                             }}
                           >
+                            
                             <text fill="#FFB800" data-v-0487c446="">
                               <textPath
                                 startOffset="50%"
@@ -3656,7 +3441,8 @@ const Home = () => {
                           </text>
                         </g>
                       </svg>
-                    </div>
+                      </div>
+                      </Fade>
                   </div>
                 </div>
                 <div className="ctf-scoop-component">
@@ -3679,6 +3465,7 @@ const Home = () => {
                       className="synchronized-waypoint marker marker marker--2"
                       data-v-3bdf0771=""
                     ></div>
+                    
                     <svg
                       viewBox="0 0 2316 1919"
                       fill="none"
@@ -4198,13 +3985,13 @@ const Home = () => {
                             data-v-83cef27e=""
                           ></path>
                         </g>
-                        <g id="top-headline" data-v-83cef27e="">
-                          <text fill="#000" data-v-83cef27e="">
+                        <g id="top-headline" data-v-83cef27e="" >
+                          <text fill="#000" data-v-83cef27e="" >
                             <textPath
                               startOffset="50%"
                               text-anchor="middle"
                               xlinkHref="#textpath1"
-                              class="pp-bold red-text text1 scoopFont"
+                              class="pp-bold red-text text1 scoopFont "
                               data-v-83cef27e=""
                               style={{ opacity: 1 }}
                             >
@@ -4347,7 +4134,8 @@ const Home = () => {
                           ></rect>
                         </clipPath>
                       </defs>
-                    </svg>
+                      </svg>
+                      
                   </div>
                 </div>
                 <div
@@ -4355,6 +4143,7 @@ const Home = () => {
                   className="synchronized-waypoint headline-in-circle position-relative"
                   data-v-3479b4ac=""
                 >
+                 
                   <svg
                     viewBox="0 0 2004 3096"
                     fill="none"
@@ -4420,7 +4209,8 @@ const Home = () => {
                         transform="matrix(0.7,0,0,0.7,300.6,95.7)"
                       ></ellipse>
                     </g>
-                  </svg>
+                    </svg>
+                    
                   <div
                     data-id="waypoint-61"
                     className="synchronized-waypoint animation-marker3"
@@ -4790,11 +4580,13 @@ const Home = () => {
                       </g>
                     </g>
                   </svg>
-                  <div
+                  
+                    <div
                     className="content-wrapper color-purple d-flex flex-column flex-center center-x position-absolute z-2"
                     data-v-3479b4ac=""
                     style={{ color: "#A380AE" }}
                   >
+                     <Fade bottom>
                     <h2
                       className="f2 f3-sm f3-xl pp-bold top-headline stagger-animation pb-0-75"
                       data-v-3479b4ac=""
@@ -4807,7 +4599,8 @@ const Home = () => {
                       }}
                     >
                       AFTER
-                    </h2>
+                      </h2>
+                      {/* </Fade> */}
                     <div
                       data-id="waypoint-62"
                       className="synchronized-waypoint position-relative image-wrapper stagger-animation"
@@ -4820,60 +4613,7 @@ const Home = () => {
                         opacity: 1,
                       }}
                     >
-                      {/* <figure
-                        className="spd overflow-hidden position-relative"
-                        style={stylesE1}
-                        data-v-23b40a86=""
-                        data-v-3479b4ac=""
-                      >
-                        <div
-                          className="position-absolute w-100 h-100 t-0 l-0"
-                          data-v-23b40a86=""
-                        >
-                          <picture data-v-23b40a86="">
-                            <source
-                              media="(min-width:1920px)"
-                              srcset="
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=370&amp;w=320&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 1x,
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=481&amp;w=416&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 2x
-              "
-                              data-v-23b40a86=""
-                            />
-                            <source
-                              media="(min-width:1200px)"
-                              srcset="
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=275&amp;w=240&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 1x,
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=358&amp;w=312&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 2x
-              "
-                              data-v-23b40a86=""
-                            />
-                            <source
-                              media="(min-width:768px)"
-                              srcset="
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=340&amp;w=300&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 1x,
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=442&amp;w=390&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 2x
-              "
-                              data-v-23b40a86=""
-                            />
-                            <source
-                              media="(min-width:0px)"
-                              srcset="
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=309&amp;w=270&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 1x,
-                https://images.ctfassets.net/j8k8klriwj2h/6dpa3z9jquNuYhDecfno4I/4d0539e4a088755f40bd0d47fbeee849/Churro_Raspberry.png?h=402&amp;w=351&amp;q=80&amp;fit=fill&amp;&amp;fm=webp&amp;q=80 2x
-              "
-                              data-v-23b40a86=""
-                            />
-                            <img
-                              draggable="false"
-                              loading="eager"
-                              alt="Churro Raspberry-min"
-                              className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                              data-v-23b40a86=""
-                              src={images[imageIndex]}
-                            />
-                          </picture>
-                        </div>
-                      </figure> */}
+                     {/* <Fade bottom> */}
                       <img
                         src={images[imageIndex]}
                         draggable="false"
@@ -4881,7 +4621,8 @@ const Home = () => {
                         alt="Churro Raspberry-min"
                         className="w-100 h-100  t-0 l-0 picture cover bg-center"
                         data-v-23b40a86=""
-                      />
+                        />
+                        {/* </Fade> */}
                     </div>
                     <div
                       className="no-wrap f2 f3-sm f3-xl pp-bold bottom-headline stagger-animation"
@@ -4894,13 +4635,19 @@ const Home = () => {
                         opacity: 1,
                       }}
                     >
-                      <span className="mr-negative" data-v-3479b4ac="">
+                      {/* <Fade bottom> */}
+                   <span className="mr-negative" data-v-3479b4ac="">
                         ONE
-                      </span>
+                        </span>
+                      {/* </Fade> */}
+                      {/* <Fade bottom> */}
                       <span className="ml-negative" data-v-3479b4ac="">
                         BITE,
                       </span>
+                      {/* </Fade> */}
+                      
                     </div>
+                    {/* <Fade bottom> */}
                     <h3
                       className="f4 f8-sm f5-xl pp-bold text-uppercase text-center"
                       data-v-3479b4ac=""
@@ -4944,7 +4691,8 @@ const Home = () => {
                       >
                         ice cream
                       </span>
-                    </h3>
+                      </h3>
+                      </Fade>
                     <img
                       src={WhiteArrowLeft}
                       alt="Boba Ice cream"
@@ -4957,8 +4705,10 @@ const Home = () => {
                         transform: "translate(0px, 100px) rotate(-90deg)",
                         opacity: 1,
                       }}
-                    />
+                      />
+                      
                   </div>
+                  
                 </div>
                 <div
                   className="ctf-slider-component position-relative"
@@ -5197,7 +4947,9 @@ const Home = () => {
                   >
                     <div
                       className="swiper-container position-relative swiper-container-initialized swiper-container-horizontal"
-                      style={{ cursor: "grab" }}
+                      style={{
+                        cursor: "grab",
+                      }}
                     >
                       <Swiper
                         modules={[Navigation, EffectFade]}
@@ -5217,7 +4969,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--active swiper-slide-active"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-72"
@@ -5332,14 +5083,7 @@ const Home = () => {
                                             data-v-23b40a86=""
                                           />
                                         </picture>
-                                        {/* <img
-                                            src="https://images.ctfassets.net/j8k8klriwj2h/3o3i4rPpiQPeimYk7ZkuRs/7e002577ba41dea3d3a59e702ce3d313/Strawberry_Shortcake.jpeg?h=481&w=611&q=80&&fl=progressive&q=80"
-                                            draggable="false"
-                                            loading="eager"
-                                            alt="Strawberry Shortcake"
-                                            className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center"
-                                            data-v-23b40a86=""
-                                          /> */}
+                                        
                                       </div>
                                     </figure>
                                   </div>
@@ -5445,7 +5189,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--prev swiper-slide-next"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-76"
@@ -5659,7 +5402,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--prev"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-80"
@@ -5876,7 +5618,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--prev"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-84"
@@ -6093,7 +5834,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--prev"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-88"
@@ -6306,7 +6046,6 @@ const Home = () => {
                             <div
                               className="swiper-slide swiper-slide--prev"
                               data-v-791a2ac4=""
-                              // style={{ width: "100%" }}
                             >
                               <div
                                 data-id="waypoint-92"
@@ -6836,7 +6575,8 @@ const Home = () => {
                       className="hash-wrapper mb-3 mb-md-0"
                       data-v-20b31861=""
                     >
-                      <div
+                      <Fade bottom>
+                        <div
                         data-preset="y"
                         data-delay=".1"
                         className="position-relative should-animate hash-bg"
@@ -6870,6 +6610,7 @@ const Home = () => {
                           style={{ opacity: 1 }}
                         />
                       </div>
+                      </Fade>
                     </div>
                     <div className="col-12 d-flex" data-v-20b31861="">
                       <div
@@ -7146,17 +6887,21 @@ const Home = () => {
                     data-id="waypoint-114"
                     className="synchronized-waypoint"
                     data-v-20b31861=""
+                    
                   >
-                    <div
+                    <Fade bottom>
+                      <div
                       data-preset="opacity,y"
                       data-delay=".1"
-                      className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate scroll-animation"
+                      className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate "
                       data-v-20b31861=""
+                      data-aos="fade-up"
                       style={{ opacity: 1 }}
                     >
                       PROUDLY AAPI⁃OWNED! A PORTION OF THE PROCEEDS, OF EVERY
                       PINT SOLD, GOES TO SUPPORT AAPI COMMUNITIES IN NEED.
                     </div>
+                    </Fade>
                   </div>
                 </div>
                 <div
@@ -7164,12 +6909,14 @@ const Home = () => {
                   className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
                   data-v-709f7a56=""
                 >
-                  <div
+                  <Fade bottom>
+                    <div
                     data-preset="y"
                     data-delay=".2"
-                    className="row justify-content-center justify-content-sm-between should-animate scroll-animation"
+                    className="row justify-content-center justify-content-sm-between should-animate"
                     data-v-709f7a56
                     style={{ opacity: 1 }}
+                    
                   >
                     <a
                       href="/"
@@ -7207,118 +6954,12 @@ const Home = () => {
                       </a>
                     </div>
                   </div>
+                  </Fade>
                 </div>
               </div>
               {/* bacic end here */}
             </div>
           </div>
-          {/* <div
-            className="warning-overlay flex-column flex-center py-1 px-2 on-top"
-            data-v-721cc652=""
-          >
-            <div
-              className="d-flex flex-column flex-center h-100 w-100 position-relative"
-              data-v-721cc652=""
-            >
-              <svg
-                viewBox="0 0 640 281"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="warning-decore"
-                data-v-721cc652=""
-              >
-                <circle
-                  cx="99.5001"
-                  cy="248.5"
-                  r="10.5001"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M100.063 244.947C104.656 244.947 104.656 242.414 104.656 240.062C104.656 242.414 104.656 244.947 109.25 244.947C104.656 244.947 104.656 248.203 104.656 250.374C104.656 248.203 104.656 244.947 100.063 244.947Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-                <circle
-                  cx="19.1076"
-                  cy="58.1076"
-                  r="19.1076"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M20.1312 51.6426C28.4908 51.6426 28.4908 47.0333 28.4908 42.7533C28.4908 47.0333 28.4908 51.6426 36.8504 51.6426C28.4908 51.6426 28.4908 57.5688 28.4908 61.5197C28.4908 57.5688 28.4908 51.6426 20.1312 51.6426Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-                <circle
-                  cx="628.892"
-                  cy="160.892"
-                  r="10.8924"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M629.476 157.207C634.241 157.207 634.241 154.58 634.241 152.14C634.241 154.58 634.241 157.207 639.007 157.207C634.241 157.207 634.241 160.586 634.241 162.838C634.241 160.586 634.241 157.207 629.476 157.207Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-                <circle
-                  r="12.5001"
-                  transform="matrix(-1 0 0 1 434.5 12.5001)"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M433.83 8.27193C428.361 8.27193 428.361 5.25656 428.361 2.45657C428.361 5.25656 428.361 8.27193 422.893 8.27193C428.361 8.27193 428.361 12.1488 428.361 14.7334C428.361 12.1488 428.361 8.27193 433.83 8.27193Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-                <circle
-                  cx="197.5"
-                  cy="204.5"
-                  r="7.50004"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M197.902 201.963C201.183 201.963 201.183 200.154 201.183 198.474C201.183 200.154 201.183 201.963 204.464 201.963C201.183 201.963 201.183 204.29 201.183 205.84C201.183 204.29 201.183 201.963 197.902 201.963Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-                <circle
-                  cx="490.5"
-                  cy="273.5"
-                  r="7.50004"
-                  fill="#473D36"
-                  data-v-721cc652=""
-                ></circle>
-                <path
-                  d="M490.902 270.963C494.183 270.963 494.183 269.154 494.183 267.474C494.183 269.154 494.183 270.963 497.464 270.963C494.183 270.963 494.183 273.29 494.183 274.84C494.183 273.29 494.183 270.963 490.902 270.963Z"
-                  fill="#F3EFE6"
-                  data-v-721cc652=""
-                ></path>
-              </svg>
-              <div
-                className="inner-wrapper d-flex flex-column flex-center flex-grow position-relative on-top"
-                data-v-721cc652=""
-              >
-                <p
-                  className="color-purple5 f8 lh-1 subheadline pp-bold mb-vmin-5 px-vmin-2 px-md-0 text-center text-uppercase"
-                  data-v-721cc652=""
-                >
-                  For better experience, <br /> please use portrait mode
-                </p>
-                <img
-                  draggable="false"
-                  src={Rotate}
-                  alt="Alet"
-                  className="rotate-decore mt-1"
-                  data-v-721cc652=""
-                />
-              </div>
-            </div>
-          </div> */}
         </main>
       </div>
     </div>
