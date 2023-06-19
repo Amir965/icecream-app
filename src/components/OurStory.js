@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/aria-proptypes */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/no-distracting-elements */
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect,useRef} from "react";
 import "./content.css";
 import "../../src/index.css";
 import { Link } from "react-router-dom";
@@ -24,14 +24,14 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Fade } from 'react-reveal';
 
 const OurStory = () => {
   const [rotation, setRotation] = useState(0);
   const [isForward, setIsForward] = useState(true);
   const [scale, setScale] = useState(0);
+  const svgRef = useRef(null);
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (isForward) {
@@ -73,16 +73,53 @@ const OurStory = () => {
     transform: `translate(0px, -20%) scale(${scale}, ${scale})`,
   };
 
-  // for div slider
-//  useEffect(() => {
-//   AOS.init({
-//     duration: 800, // Animation duration in milliseconds
-//     delay: 200, // Delay between animations in milliseconds
-//     easing: 'ease-in-out', // Easing function for animations
-//     once: true, // Only animate elements once, on first scroll
-//   });
-// }, []);
+ 
 
+  // for how-it-began rotation
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Adjust the threshold as needed
+    };
+
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the animation class to rotate the text
+          svgRef.current.classList.add('how-it-began','our-communities','supporting');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(svgRef.current);
+
+    const handleScroll = () => {
+      if (svgRef.current && isScrolledIntoView(svgRef.current)) {
+        // Add the animation class to rotate the text
+        svgRef.current.classList.add('how-it-began','our-communities','supporting');
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const isScrolledIntoView = (element) => {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top >= 0 && rect.bottom <= windowHeight;
+  };
+
+  
 
   const stylesMain = {
     "--white": "#f3efe6",
@@ -153,61 +190,7 @@ const OurStory = () => {
     "--xxl": "100%",
   };
 
-//   const stylesE12 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(0px)",
-//   };
-//   const stylesE13 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(-1589.9px)",
-//   };
-//   const stylesE14 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(-2384.85px)",
-//   };
-//   const stylesE15 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(-3179.8px)",
-//   };
-//   const stylesE16 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(-3974.75px)",
-//   };
+
   const stylesE17 = {
     "--53a1ab0e": "undefined",
     "--6c777af4": "18vw",
@@ -411,17 +394,7 @@ const OurStory = () => {
     "--0badb96c": "0px",
     opacity: "1",
   };
-//   const stylesE31 = {
-//     "--align": "center",
-//     "--align-mobile": "center",
-//     "--xs": "100%",
-//     "--sm": "100%",
-//     "--md": "70%",
-//     "--lg": "70%",
-//     " --xl": "34.4%",
-//     "--xxl": "34.4%",
-//     transform: "translateX(-794.95px)",
-//   };
+
 
   return (
     <div id="__nuxt">
@@ -1908,7 +1881,8 @@ const OurStory = () => {
                         viewBox="0 0 1660 1681"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="curved-text top-curved-text"
+                        className="curved-text top-curved-text how-it-began"
+                        ref={svgRef}
                       >
                         <defs data-v-16c2f99a="">
                           <path
@@ -1921,7 +1895,7 @@ const OurStory = () => {
                         <text
                           data-v-16c2f99a=""
                           fill="#EF1525"
-                          className="curved-text text-uppercase pp-bold"
+                          className="curved-text text-uppercase pp-bold how-it-began"
                         >
                           <textPath
                             data-v-16c2f99a=""
@@ -6325,7 +6299,7 @@ const OurStory = () => {
                     data-v-f223df8c=""
                   ></div>
                   <div
-                    className="big-circle-and-round-text-svg circles-svg position-relative d-none d-sm-block"
+                    className="big-circle-and-round-text-svg circles-svg position-relative d-none d-sm-block "
                     data-v-f223df8c=""
                   >
                     <svg
@@ -6352,7 +6326,7 @@ const OurStory = () => {
                             fill="#FFB800"
                           ></rect>
                           <g
-                            class="bottom-circle"
+                            class="bottom-circle "
                             data-svg-origin="1969.8600463867188 1614.7900390625"
                             transform="matrix(0.7526,0.65848,-0.65848,0.7526,1550.65032,-897.61439)"
                             style={{
@@ -6759,6 +6733,7 @@ const OurStory = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     class="circles-svg position-relative d-sm-none"
                     data-v-f223df8c=""
+                    
                   >
                     <ellipse
                       cx="352"
@@ -7130,9 +7105,10 @@ const OurStory = () => {
                     viewBox="0 0 1660 1681"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="curved-text curved-text curved-text--top"
+                    class="curved-text curved-text curved-text--top supporting"
                     data-v-16c2f99a=""
                     data-v-f223df8c=""
+                    ref={svgRef}
                   >
                     <defs data-v-16c2f99a="">
                       <path
@@ -7161,9 +7137,10 @@ const OurStory = () => {
                     viewBox="0 0 1660 1681"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="curved-text curved-text curved-text--bottom"
+                    class="curved-text curved-text curved-text--bottom our-communities"
                     data-v-16c2f99a=""
                     data-v-f223df8c=""
+                    ref={svgRef}
                   >
                     <defs data-v-16c2f99a="">
                       <path
@@ -7840,7 +7817,7 @@ const OurStory = () => {
                       data-preset="opacity,y "
                       data-delay=".1 "
                       className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate"
-                      data-aos="fade-up"
+                      
                       style={{ opacity: 1 }}
                       
                     >

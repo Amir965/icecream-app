@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect,useRef} from "react";
 import Header from "../assets/svg/headerx.svg";
 import TM from "../assets/svg/tm.svg";
 import WhiteArrowLeft from "../assets/svg/white-arrow-left.svg";
@@ -18,15 +18,14 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
-import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// import Lenis from "@studio-freight/lenis"
-import { Fade} from 'react-reveal';
+
+import { Fade } from 'react-reveal';
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   // const scrollRef = useRef(null);
+  const svgRef = useRef(null);
   const target = 6;
   const images = [
     "https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
@@ -148,23 +147,35 @@ const Home = () => {
   }
   window.addEventListener("scroll", handleScroll);
 
-  // for small-batch rotation
-  useEffect(() => {
-  AOS.init({
-    duration: 1000, // Animation duration in milliseconds
-    delay: 200, // Delay between animations in milliseconds
-    once: false,
-  });
-}, []);
   
-  // for smooth scroll
-  // const handleSmoothScroll = () => {
-  //   Lenis.scrollTo(scrollRef.current, {
-  //     duration: 1000,
-  //     easing: 'easeInOutQuart',
-  //     offset: 0,
-  //   });
-  // };
+  
+  
+
+  // for svg circular path rotation
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Adjust the threshold as needed
+    };
+
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the animation class to rotate the text
+          svgRef.current.classList.add('scoop-svg');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(svgRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   
   const styles1 = {
     "--66144870": "rotate(40deg)",
@@ -266,16 +277,6 @@ const Home = () => {
     "--xl": "100%",
     "--xxl": "100%",
   };
-  //   const stylesE1 = {
-  //     "--align": "center",
-  //     "--align-mobile": "center",
-  //     "--xs": "113.99999999999999%",
-  //     "--sm": "113.99999999999999%",
-  //     "--md": "113.99999999999999%",
-  //     "--lg": "113.99999999999999%",
-  //     "--xl": "113.99999999999999%",
-  //     "--xxl": "113.99999999999999%",
-  //   };
   const stylesE2 = {
     "--5f8288ba": "170.9422011084719vw",
   };
@@ -351,7 +352,7 @@ const Home = () => {
               className="should-animate row align-items-center justify-content-between boba-text"
               data-v-582e57fe
               style={{ opacity: 1 }}
-              data-aos="fade-down"
+              
             >
               <a
                 href="/"
@@ -3096,7 +3097,6 @@ const Home = () => {
                       className="f1-custom f2-sm f1-4-xl color-red d-flex flex-column text-center w-100 pp-bold should-animate name-a-more"
                       data-v-8390fb7c=" "
                       style={{ opacity: 1 }}
-                      data-aos="fade-up"
                     >
                       <span data-v-8390fb7c=" ">NAME</span>
                       <span data-v-8390fb7c=" ">A MORE</span>
@@ -3473,6 +3473,7 @@ const Home = () => {
                       class="scoop-svg"
                       data-v-83cef27e=""
                       data-v-3bdf0771=""
+                      ref={svgRef}
                     >
                       <defs data-v-83cef27e="">
                         <path
@@ -6895,7 +6896,7 @@ const Home = () => {
                       data-delay=".1"
                       className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate "
                       data-v-20b31861=""
-                      data-aos="fade-up"
+                     
                       style={{ opacity: 1 }}
                     >
                       PROUDLY AAPI⁃OWNED! A PORTION OF THE PROCEEDS, OF EVERY

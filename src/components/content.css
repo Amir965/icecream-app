@@ -46370,16 +46370,62 @@ button.swiper-pagination-bullet {
     display: none;
 }
 
-/* for small-batch rotation */
+/* for how it all begin rotation */
 
-.container-body {
-    height: 9000px;
+.how-it-began
+ {
+    animation: rotateHowItText 5s backwards;
 }
 
-.spinner {
-    width: 140px;
-    height: 140px;
-    background-color: cornflowerblue;
-    margin: auto;
-    margin-top: 55%;
+@keyframes rotateHowItText {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
 }
+
+.our-communities {
+    animation: rotateText 10s backwards;
+}
+
+@keyframes rotateText {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+.supporting{
+    animation: rotateSupporting 10s backwards;
+}
+
+@keyframes rotateSupporting {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+.with-each-pint {
+    animation: rotateTextWithEachPint 10s linear infinite;
+}
+
+@keyframes rotateTextWithEachPint {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
