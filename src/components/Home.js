@@ -18,8 +18,7 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
-
-import { Fade } from 'react-reveal';
+import {Fade} from "react-awesome-reveal"
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -3090,7 +3089,7 @@ const Home = () => {
                     className="synchronized-waypoint headline position-absolute w-100 on-top "
                     data-v-8390fb7c=" "
                   >
-                     <Fade bottom>
+                     <Fade direction="up">
                     <h2
                       data-preset="opacity,y "
                       data-delay=".1 "
@@ -3146,7 +3145,7 @@ const Home = () => {
                         ></rect>
                       </svg>
                     </div>
-                    <Fade bottom>
+                    <Fade direction="up">
                     <div data-v-7743ff1f="">
                       <svg
                         viewBox="0 0 2713 3360"
@@ -4587,7 +4586,7 @@ const Home = () => {
                     data-v-3479b4ac=""
                     style={{ color: "#A380AE" }}
                   >
-                     <Fade bottom>
+                     <Fade direction="up">
                     <h2
                       className="f2 f3-sm f3-xl pp-bold top-headline stagger-animation pb-0-75"
                       data-v-3479b4ac=""
@@ -6576,7 +6575,7 @@ const Home = () => {
                       className="hash-wrapper mb-3 mb-md-0"
                       data-v-20b31861=""
                     >
-                      <Fade bottom>
+                      <Fade direction="up">
                         <div
                         data-preset="y"
                         data-delay=".1"
@@ -6890,7 +6889,7 @@ const Home = () => {
                     data-v-20b31861=""
                     
                   >
-                    <Fade bottom>
+                    <Fade direction="up">
                       <div
                       data-preset="opacity,y"
                       data-delay=".1"
@@ -6910,7 +6909,7 @@ const Home = () => {
                   className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
                   data-v-709f7a56=""
                 >
-                  <Fade bottom>
+                  <Fade direction="up">
                     <div
                     data-preset="y"
                     data-delay=".2"

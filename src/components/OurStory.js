@@ -24,13 +24,14 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
-import { Fade } from 'react-reveal';
-
+import { Fade } from "react-awesome-reveal";
+import { useInView } from 'react-intersection-observer';
 const OurStory = () => {
   const [rotation, setRotation] = useState(0);
   const [isForward, setIsForward] = useState(true);
   const [scale, setScale] = useState(0);
   const svgRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -78,6 +79,7 @@ const OurStory = () => {
   // for how-it-began rotation
 
   useEffect(() => {
+    window.scrollTo(0, 1500);
     const options = {
       root: null,
       rootMargin: '0px',
@@ -88,7 +90,7 @@ const OurStory = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Add the animation class to rotate the text
-          svgRef.current.classList.add('how-it-began','our-communities','supporting');
+          svgRef.current.classList.add('how-it-began','our-communities','supporting','Happiness');
           observer.unobserve(entry.target);
         }
       });
@@ -100,7 +102,7 @@ const OurStory = () => {
     const handleScroll = () => {
       if (svgRef.current && isScrolledIntoView(svgRef.current)) {
         // Add the animation class to rotate the text
-        svgRef.current.classList.add('how-it-began','our-communities','supporting');
+        svgRef.current.classList.add('how-it-began','our-communities','supporting','Happiness');
         window.removeEventListener('scroll', handleScroll);
       }
     };
@@ -119,8 +121,24 @@ const OurStory = () => {
     return rect.top >= 0 && rect.bottom <= windowHeight;
   };
 
+// for Circular text rotation
   
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Only trigger once when the element comes into view
+    threshold: 0.5, // Adjust the threshold as needed
+  });
+  const textPathRef = useRef(null);
 
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+
+
+  
+  
+  
   const stylesMain = {
     "--white": "#f3efe6",
     "--whitev2": "#ffffff",
@@ -400,6 +418,8 @@ const OurStory = () => {
     <div id="__nuxt">
       <div id="__layout">
         <main style={stylesMain}>
+      <div ref={ref} className="scroll-trigger" />
+          
           <div
             data-id="waypoint-10"
             className="synchronized-waypoint navigation px-0-875 px-sm-1-75 px-xl-2 py-0-75 py-lg-1-25 position-absolute t-0 l-0 w-100 on-top white"
@@ -715,7 +735,7 @@ const OurStory = () => {
                       >
                         <div
                           data-v-6dc35003=""
-                          className="inner position-relative f0-xs f1-2-sm f0-xl lh-1-05 mobile-offset"
+                          className="inner position-relative f0-xs  f0-xl lh-1-05 mobile-offset"
                           style={{
                             translate: "none",
                             rotate: "none",
@@ -734,7 +754,7 @@ const OurStory = () => {
                       >
                         <div
                           data-v-6dc35003=""
-                          className="inner position-relative f0-xs f1-2-sm f0-xl lh-1-05 boba"
+                          className="inner position-relative f0-xs  f0-xl lh-1-05 boba"
                           style={{
                             translate: "none",
                             rotate: "none",
@@ -796,16 +816,19 @@ const OurStory = () => {
                     data-id="waypoint-237"
                     className="synchronized-waypoint waypoint-offset"
                   ></div>
+                  
                   <div
                     data-id="waypoint-238"
                     className="synchronized-waypoint position-relative"
                   >
+                    
                     <svg
                       data-v-791b065e=""
                       viewBox="0 0 2192 1539"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       className="svg-curved-text svg-bg position-relative center-x"
+                      
                     >
                       <ellipse
                         data-v-791b065e=""
@@ -846,14 +869,14 @@ const OurStory = () => {
                         id="textpath1"
                         d="M407,658C469.406,532.58 565.916,426.652 685.804,351.988C805.691,277.325 944.261,236.85 1086.11,235.062C1227.96,233.274 1367.54,270.244 1489.33,341.861C1611.12,413.479 1710.35,516.94 1776,640.746"
                       ></path>
-                      <text data-v-791b065e="" fill="#FFB800" >
+                      <text data-v-791b065e="" fill="#FFB800">
                         <textPath
                           data-v-791b065e=""
-                          startOffset={"24%" }
+                          startOffset="24%"
                           text-anchor="middle"
                           xlinkHref="#textpath1"
                           className="curved-textpath1 pp-bold text-uppercase curvedHeadlineBig"
-                          // style={{ startOffset }}
+                          // ref={svgRef}
                         >
                           Happiness
                         </textPath>
@@ -1065,7 +1088,7 @@ const OurStory = () => {
                         className="synchronized-waypoint overflow-hidden"
                       >
                         
-                        <Fade bottom>
+                        <Fade direction="up">
                           <div
                           data-v-6dc35003=""
                           className="inner position-relative lh-1-05 color-red6 pp-bold text-center text-uppercase f3-3-xs f6-2-sm f3-2-xl"
@@ -1087,10 +1110,10 @@ const OurStory = () => {
                         data-id="waypoint-247"
                         className="synchronized-waypoint overflow-hidden"
                       >
-                        <Fade bottom>
+                        <Fade direction="up">
                           <div
                           data-v-6dc35003=""
-                          className="inner position-relative on-top bottom-headline-offset pt-xl-1-25 color-red6 pp-bold text-center text-uppercase f1-3-xs f1-1-sm f1-0-xl"
+                          className="inner position-relative on-top bottom-headline-offset pt-xl-1-25 color-red6 pp-bold text-center text-uppercase f1-3-xs  f1-0-xl"
                           style={{
                             translate: "none",
                             rotate: "none",
@@ -1973,7 +1996,7 @@ const OurStory = () => {
                         style={{ opacity: 1 }}
                       >
                         
-                        <Fade bottom>
+                        <Fade direction="up">
                           <figure
                           data-v-23b40a86=""
                           className="spd overflow-hidden image mx-auto position-relative"
@@ -2031,6 +2054,7 @@ const OurStory = () => {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="curved-text bottom-curved-text"
+                        
                       >
                         <defs data-v-16c2f99a="">
                           <path
@@ -2055,6 +2079,8 @@ const OurStory = () => {
                           </textPath>
                         </text>
                       </svg>
+                     
+
                       <div
                         data-v-4bd6f78a=""
                         data-id="waypoint-263"
@@ -2227,7 +2253,7 @@ const OurStory = () => {
                     data-id="waypoint-269"
                     className="synchronized-waypoint overflow-hidden magic-font-offset"
                   >
-                    <Fade bottom>
+                    <Fade direction="up">
                       <div
                       data-v-6dc35003=""
                       className="inner position-relative text-uppercase color-red lh-1-05 f2-2 f3-1-sm f1-1-xl pp-bold"
@@ -2627,7 +2653,7 @@ const OurStory = () => {
                       />
                     </div> */}
                   </div>
-                  <Fade bottom>
+                  <Fade direction="up">
 <div className="d-flex text-uppercase color-red f2-2 f3-1-sm f1-1-xl pp-bold pt-0-625 mb-0-25 mb-sm-0 pt-md-1 text-center ">
                     <div className="mr-3 mr-md-7 mr-xl-13 position-relative ">
                       <div
@@ -4412,7 +4438,7 @@ const OurStory = () => {
                   data-id="waypoint-291 "
                   className="synchronized-waypoint team px-0-5 pt-xl-5-5 py-2 px-lg-1 position-relative bg-gray "
                 >
-                  <Fade bottom>
+                  <Fade direction="up">
                     <div
                     data-v-5a623b3d=" "
                     className="color-red text-center d-flex flex-column pp-bold text-uppercase lh-12 z-2 position-relative "
@@ -6298,6 +6324,8 @@ const OurStory = () => {
                     className="synchronized-waypoint"
                     data-v-f223df8c=""
                   ></div>
+      <div ref={ref} className="scroll-trigger" />
+
                   <div
                     className="big-circle-and-round-text-svg circles-svg position-relative d-none d-sm-block "
                     data-v-f223df8c=""
@@ -7101,7 +7129,7 @@ const OurStory = () => {
                       data-v-f223df8c=""
                     ></ellipse>
                   </svg>
-                  <svg
+                  {/* <svg
                     viewBox="0 0 1660 1681"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -7164,7 +7192,74 @@ const OurStory = () => {
                         OUR COMMUNITIES
                       </textPath>
                     </text>
+                  </svg> */}
+                  <svg
+                    viewBox="0 0 1660 1681"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class={`curved-text curved-text curved-text--top ${isVisible ? 'supporting' : ''}`}
+                    data-v-16c2f99a=""
+          data-v-f223df8c=""
+           ref={textPathRef}
+                  >
+                    <defs data-v-16c2f99a="">
+                      <path
+                        data-v-16c2f99a=""
+                        id="clip-path-134"
+                        d="M335,840.002L335,840.002C335,715.085 387.204,595.283 480.128,506.953C573.055,418.623 699.085,369 830.5,369C961.915,369 1087.95,418.623 1180.87,506.953C1273.79,595.283 1326,715.085 1326,840.002C1326,964.919 1273.79,1084.72 1180.87,1173.05C1087.95,1261.38 961.915,1311 830.5,1311C699.085,1311 573.055,1261.38 480.128,1173.05C387.204,1084.72 335,964.919 335,840.002"
+                        stroke="#0000FF"
+                      ></path>
+                    </defs>
+                    <text
+                      fill="#FFD864"
+                      class="curved-text text-uppercase pp-bold"
+                      data-v-16c2f99a=""
+                    >
+                      <textPath
+                        startOffset="25%"
+                        text-anchor="middle"
+                        xlinkHref="#clip-path-134"
+              data-v-16c2f99a=""
+             
+                      >
+                        SUPPORTING
+                      </textPath>
+                    </text>
                   </svg>
+                  <svg
+                    viewBox="0 0 1660 1681"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class={`curved-text curved-text curved-text--bottom ${isVisible ? 'communities' : ''}`}
+                    data-v-16c2f99a=""
+          data-v-f223df8c=""
+          ref={textPathRef}
+                  >
+                    <defs data-v-16c2f99a="">
+                      <path
+                        data-v-16c2f99a=""
+                        id="clip-path-135"
+                        d="M335,840.002L335,840.002C335,715.085 387.204,595.283 480.128,506.953C573.055,418.623 699.085,369 830.5,369C961.915,369 1087.95,418.623 1180.87,506.953C1273.79,595.283 1326,715.085 1326,840.002C1326,964.919 1273.79,1084.72 1180.87,1173.05C1087.95,1261.38 961.915,1311 830.5,1311C699.085,1311 573.055,1261.38 480.128,1173.05C387.204,1084.72 335,964.919 335,840.002"
+                        stroke="#0000FF"
+                      ></path>
+                    </defs>
+                    <text
+                      fill="#FFD864"
+                      class="curved-text text-uppercase pp-bold"
+                      data-v-16c2f99a=""
+                    >
+                      <textPath
+                        startOffset="25%"
+                        text-anchor="middle"
+                        xlinkHref="#clip-path-135"
+              data-v-16c2f99a=""
+              
+                      >
+                        OUR COMMUNITIES
+                      </textPath>
+                    </text>
+                  </svg>
+
                   <img
                     src={f57c}
                     alt="Boba Ice Creams"
@@ -7509,7 +7604,7 @@ const OurStory = () => {
                       data-v-20b31861=" "
                       className="hash-wrapper mb-3 mb-md-0 "
                     >
-                      <Fade bottom>
+                      <Fade direction="up">
                         <div
                         data-v-20b31861=" "
                         data-preset="y "
@@ -7811,7 +7906,7 @@ const OurStory = () => {
                     className="synchronized-waypoint "
                     
                   >
-                    <Fade bottom>
+                    <Fade direction="up">
                       <div
                       data-v-20b31861="ade-up"
                       data-preset="opacity,y "
@@ -7832,7 +7927,7 @@ const OurStory = () => {
                   className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
                   data-v-709f7a56=""
                 >
-                  <Fade bottom>
+                  <Fade direction="up">
                     <div
                     data-preset="y"
                     data-delay=".2"

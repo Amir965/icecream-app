@@ -46372,7 +46372,7 @@ button.swiper-pagination-bullet {
 
 /* for how it all begin rotation */
 
-.how-it-began
+/* .how-it-began
  {
     animation: rotateHowItText 5s backwards;
 }
@@ -46393,7 +46393,7 @@ button.swiper-pagination-bullet {
 
 @keyframes rotateText {
     from {
-        transform: rotate(45deg);
+        transform: rotate(-90deg);
     }
 
     to {
@@ -46427,5 +46427,32 @@ button.swiper-pagination-bullet {
     to {
         transform: rotate(360deg);
     }
+} */
+
+.supporting {
+    animation: rotateSupporting 2s forwards;
 }
 
+@keyframes rotateSupporting {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.communities {
+    animation: rotateCommunities 2s forwards;
+}
+
+@keyframes rotateCommunities {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
