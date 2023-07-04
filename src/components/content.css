@@ -46431,6 +46431,7 @@ button.swiper-pagination-bullet {
 
 .supporting {
     animation: rotateSupporting 2s forwards;
+    transform-origin: center;
 }
 
 @keyframes rotateSupporting {
@@ -46445,6 +46446,7 @@ button.swiper-pagination-bullet {
 
 .communities {
     animation: rotateCommunities 2s forwards;
+    transform-origin: center;
 }
 
 @keyframes rotateCommunities {
@@ -46456,3 +46458,117 @@ button.swiper-pagination-bullet {
         transform: rotate(0deg);
     }
 }
+.smallbatch{
+animation: rotateSmallBatch 2s forwards;
+    transform-origin: bottom;
+}
+
+@keyframes rotateSmallBatch {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.one-of-a{
+    animation: rotateOneOfA 2s forwards;
+    transform-origin: bottom;
+}
+@keyframes rotateOneOfA {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.tapico {
+    animation: rotateTapico 2s forwards;
+    transform-origin: top;
+}
+
+@keyframes rotateTapico {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.perls {
+    animation: rotatePerls 2s forwards;
+    transform-origin: top;
+}
+
+@keyframes rotatePerls {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.leftarrow{
+    animation: rotateLeftArrow 3s forwards;
+    transform-origin: bottom;
+}
+@keyframes rotateLeftArrow {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.rightarrow {
+    animation: rotateRightArrow 3s forwards;
+    transform-origin: bottom;
+}
+
+@keyframes rotateRightArrow {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.happiness{
+        animation: rotateHappiness 5s forwards;
+        transform-origin: center;
+    }
+
+    @keyframes rotateHappiness {
+        0% {
+            transform: rotate(-90deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+.delivered{
+        animation: rotateDelivered 5s forwards;
+        transform-origin: center;
+    }
+
+    @keyframes rotateDelivered {
+        0% {
+            transform: rotate(90deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }

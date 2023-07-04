@@ -124,7 +124,7 @@ const OurStory = () => {
 // for Circular text rotation
   
   const [ref, inView] = useInView({
-    triggerOnce: false, // Only trigger once when the element comes into view
+    triggerOnce: true, // Only trigger once when the element comes into view
     threshold: 0.5, // Adjust the threshold as needed
   });
   const textPathRef = useRef(null);
@@ -418,7 +418,7 @@ const OurStory = () => {
     <div id="__nuxt">
       <div id="__layout">
         <main style={stylesMain}>
-      <div ref={ref} className="scroll-trigger" />
+      {/* <div ref={ref} className="scroll-trigger"/> */}
           
           <div
             data-id="waypoint-10"
@@ -653,6 +653,7 @@ const OurStory = () => {
           >
             <div className="scroller overflow-hidden">
               <div className="basic-page">
+                <div ref={ref} className="scroll-trigger"/>
                 <div className="about-header bg-yellow4 pt-3 pt-sm-5">
                   <div className="text-center mx-auto pp-bold color-red text-uppercase position-relative boba-title-h1">
                     <div
@@ -812,6 +813,7 @@ const OurStory = () => {
                   </div>
                 </div>
                 <div className="curved-headline-and-circular-image position-relative pb-10 pb-sm-13 pb-xl-30">
+                
                   <div
                     data-id="waypoint-237"
                     className="synchronized-waypoint waypoint-offset"
@@ -822,13 +824,13 @@ const OurStory = () => {
                     className="synchronized-waypoint position-relative"
                   >
                     
-                    <svg
+                      <svg
                       data-v-791b065e=""
                       viewBox="0 0 2192 1539"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       className="svg-curved-text svg-bg position-relative center-x"
-                      
+                       
                     >
                       <ellipse
                         data-v-791b065e=""
@@ -869,19 +871,21 @@ const OurStory = () => {
                         id="textpath1"
                         d="M407,658C469.406,532.58 565.916,426.652 685.804,351.988C805.691,277.325 944.261,236.85 1086.11,235.062C1227.96,233.274 1367.54,270.244 1489.33,341.861C1611.12,413.479 1710.35,516.94 1776,640.746"
                       ></path>
-                      <text data-v-791b065e="" fill="#FFB800">
+                      <text data-v-791b065e="" fill="#FFB800" class={`${isVisible ? 'happiness' : ''}`}
+                        ref={textPathRef}>
                         <textPath
                           data-v-791b065e=""
                           startOffset="24%"
                           text-anchor="middle"
                           xlinkHref="#textpath1"
                           className="curved-textpath1 pp-bold text-uppercase curvedHeadlineBig"
-                          // ref={svgRef}
+                          
                         >
                           Happiness
                         </textPath>
                       </text>
-                      <text data-v-791b065e="" fill="#FFB800">
+                      <text data-v-791b065e="" fill="#FFB800" class={`${isVisible ? 'delivered' : ''}`}
+                        ref={textPathRef}>
                         <textPath
                           data-v-791b065e=""
                           startOffset="76%"
@@ -892,18 +896,21 @@ const OurStory = () => {
                           delivered
                         </textPath>
                       </text>
-                      <text data-v-791b065e="" fill="#BF4C6B">
+                      <text data-v-791b065e="" fill="#BF4C6B" class={`${isVisible ? 'happiness' : ''}`}
+                        ref={textPathRef}>
                         <textPath
                           data-v-791b065e=""
                           startOffset="50%"
                           text-anchor="middle"
                           xlinkHref="#textpath3"
                           className="curved-textpath3 pp-bold text-uppercase curvedHeadlineSmall"
+                          
                         >
                           We believe food has the power to unite
                         </textPath>
                       </text>
-                      <text data-v-791b065e="" fill="#BF4C6B">
+                      <text data-v-791b065e="" fill="#BF4C6B" class={`${isVisible ? 'delivered' : ''}`}
+                        ref={textPathRef}>
                         <textPath
                           data-v-791b065e=""
                           startOffset="50%"
@@ -915,6 +922,8 @@ const OurStory = () => {
                         </textPath>
                       </text>
                     </svg>
+                    
+                    
                     <div className="image-holder position-absolute mx-auto z-1">
                       <figure
                         data-v-23b40a86=""
@@ -1128,7 +1137,8 @@ const OurStory = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
+                  
                 <div
                   className="two-images-and-bubbles color-white position-relative mb-sm-4 mb-xl-12"
                   bubblesgroup="[object Object]"
@@ -6315,16 +6325,18 @@ const OurStory = () => {
                         </div>
                   </div>
                 </div>
+                
                 <div
                   className="big-circles-and-round-text position-relative"
                   data-v-f223df8c=""
+                  
                 >
                   <div
                     data-id="waypoint-131"
                     className="synchronized-waypoint"
                     data-v-f223df8c=""
                   ></div>
-      <div ref={ref} className="scroll-trigger" />
+               <div ref={ref} className="scroll-trigger" />
 
                   <div
                     className="big-circle-and-round-text-svg circles-svg position-relative d-none d-sm-block "
@@ -7129,77 +7141,14 @@ const OurStory = () => {
                       data-v-f223df8c=""
                     ></ellipse>
                   </svg>
-                  {/* <svg
-                    viewBox="0 0 1660 1681"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="curved-text curved-text curved-text--top supporting"
-                    data-v-16c2f99a=""
-                    data-v-f223df8c=""
-                    ref={svgRef}
-                  >
-                    <defs data-v-16c2f99a="">
-                      <path
-                        data-v-16c2f99a=""
-                        id="clip-path-134"
-                        d="M335,840.002L335,840.002C335,715.085 387.204,595.283 480.128,506.953C573.055,418.623 699.085,369 830.5,369C961.915,369 1087.95,418.623 1180.87,506.953C1273.79,595.283 1326,715.085 1326,840.002C1326,964.919 1273.79,1084.72 1180.87,1173.05C1087.95,1261.38 961.915,1311 830.5,1311C699.085,1311 573.055,1261.38 480.128,1173.05C387.204,1084.72 335,964.919 335,840.002"
-                        stroke="#0000FF"
-                      ></path>
-                    </defs>
-                    <text
-                      fill="#FFD864"
-                      class="curved-text text-uppercase pp-bold"
-                      data-v-16c2f99a=""
-                    >
-                      <textPath
-                        startOffset="25%"
-                        text-anchor="middle"
-                        xlinkHref="#clip-path-134"
-                        data-v-16c2f99a=""
-                      >
-                        SUPPORTING
-                      </textPath>
-                    </text>
-                  </svg>
+
                   <svg
                     viewBox="0 0 1660 1681"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    class="curved-text curved-text curved-text--bottom our-communities"
-                    data-v-16c2f99a=""
-                    data-v-f223df8c=""
-                    ref={svgRef}
-                  >
-                    <defs data-v-16c2f99a="">
-                      <path
-                        data-v-16c2f99a=""
-                        id="clip-path-135"
-                        d="M335,840.002L335,840.002C335,715.085 387.204,595.283 480.128,506.953C573.055,418.623 699.085,369 830.5,369C961.915,369 1087.95,418.623 1180.87,506.953C1273.79,595.283 1326,715.085 1326,840.002C1326,964.919 1273.79,1084.72 1180.87,1173.05C1087.95,1261.38 961.915,1311 830.5,1311C699.085,1311 573.055,1261.38 480.128,1173.05C387.204,1084.72 335,964.919 335,840.002"
-                        stroke="#0000FF"
-                      ></path>
-                    </defs>
-                    <text
-                      fill="#FFD864"
-                      class="curved-text text-uppercase pp-bold"
-                      data-v-16c2f99a=""
-                    >
-                      <textPath
-                        startOffset="25%"
-                        text-anchor="middle"
-                        xlinkHref="#clip-path-135"
-                        data-v-16c2f99a=""
-                      >
-                        OUR COMMUNITIES
-                      </textPath>
-                    </text>
-                  </svg> */}
-                  <svg
-                    viewBox="0 0 1660 1681"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    class={`curved-text curved-text curved-text--top ${isVisible ? 'supporting' : ''}`}
                     data-v-16c2f99a=""
           data-v-f223df8c=""
+                    class={`curved-text curved-text curved-text--top ${isVisible ? 'supporting' : ''}`}
            ref={textPathRef}
                   >
                     <defs data-v-16c2f99a="">
@@ -7267,6 +7216,7 @@ const OurStory = () => {
                     data-v-f223df8c=""
                   />
                 </div>
+                
                 <div
                   data-id="waypoint-138"
                   className="synchronized-waypoint newsletter-component position-relative z-4 pb-1 color-yellow pp-bold text-center text-uppercase d-flex flex-column justify-content-between overflow-hidden"
@@ -7977,7 +7927,8 @@ const OurStory = () => {
                 
               </div>
             </div>
-          </div>
+            </div>
+            
         </main>
       </div>
     </div>

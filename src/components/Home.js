@@ -18,13 +18,17 @@ import { Navigation, EffectFade } from "swiper";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
-import {Fade} from "react-awesome-reveal"
+import { Fade } from "react-awesome-reveal"
+import { useInView } from 'react-intersection-observer';
+
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+
   // const scrollRef = useRef(null);
-  const svgRef = useRef(null);
+  // const svgRef = useRef(null);
   const target = 6;
   const images = [
     "https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
@@ -151,31 +155,46 @@ const Home = () => {
   
 
   // for svg circular path rotation
-  useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5, // Adjust the threshold as needed
-    };
+  // useEffect(() => {
+  //   const options = {
+  //     root: null,
+  //     rootMargin: '0px',
+  //     threshold: 0.5, // Adjust the threshold as needed
+  //   };
 
-    const callback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Add the animation class to rotate the text
-          svgRef.current.classList.add('scoop-svg');
-          observer.unobserve(entry.target);
-        }
-      });
-    };
+  //   const callback = (entries, observer) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         // Add the animation class to rotate the text
+  //         svgRef.current.classList.add('scoop-svg');
+  //         observer.unobserve(entry.target);
+  //       }
+  //     });
+  //   };
 
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(svgRef.current);
+  //   const observer = new IntersectionObserver(callback, options);
+  //   observer.observe(svgRef.current);
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  //   return () => {
+  //     observer.disconnect();
+  //   };
+  // }, []);
   
+
+// for Circular text rotation
+  
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Only trigger once when the element comes into view
+    threshold: 0.5, // Adjust the threshold as needed
+  });
+  const textPathRef = useRef(null);
+
+  useEffect(() => {
+    if (inView) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+
   const styles1 = {
     "--66144870": "rotate(40deg)",
     "--c9557f00": "rotate(-40deg)",
@@ -3093,7 +3112,7 @@ const Home = () => {
                     <h2
                       data-preset="opacity,y "
                       data-delay=".1 "
-                      className="f1-custom f2-sm f1-4-xl color-red d-flex flex-column text-center w-100 pp-bold should-animate name-a-more"
+                      className="f1-custom f2-sm f1-4-xl color-red d-flex flex-column text-center w-100 pp-bold should-animate"
                       data-v-8390fb7c=" "
                       style={{ opacity: 1 }}
                     >
@@ -3449,6 +3468,7 @@ const Home = () => {
                     className="scoop-component position-relative pb-2 pb-md-0"
                     data-v-3bdf0771=""
                   >
+                    <div ref={ref} className="scroll-trigger" />
                     <div
                       data-id="waypoint-54"
                       className="synchronized-waypoint marker marker marker--0"
@@ -3472,7 +3492,7 @@ const Home = () => {
                       class="scoop-svg"
                       data-v-83cef27e=""
                       data-v-3bdf0771=""
-                      ref={svgRef}
+                      // ref={svgRef}
                     >
                       <defs data-v-83cef27e="">
                         <path
@@ -3986,7 +4006,8 @@ const Home = () => {
                           ></path>
                         </g>
                         <g id="top-headline" data-v-83cef27e="" >
-                          <text fill="#000" data-v-83cef27e="" >
+                          <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'smallbatch' : ''}`}
+                        ref={textPathRef}>
                             <textPath
                               startOffset="50%"
                               text-anchor="middle"
@@ -4009,9 +4030,11 @@ const Home = () => {
                               translate: "none",
                               rotate: "none",
                               scale: "none",
-                              transformOrigin: "0px 0px",
+                              // transformOrigin: "0px 0px",
                               opacity: 1,
                             }}
+                            class={`${isVisible ? 'rightarrow' : ''}`}
+                        ref={textPathRef}
                           >
                             <rect
                               id="Rectangle 331"
@@ -4040,9 +4063,11 @@ const Home = () => {
                               translate: "none",
                               rotate: "none",
                               scale: "none",
-                              transformOrigin: "0px 0px",
+                              // transformOrigin: "0px 0px",
                               opacity: 1,
                             }}
+                            class={`${isVisible ? 'leftarrow' : ''}`}
+                        ref={textPathRef}
                           >
                             <rect
                               id="Rectangle 330"
@@ -4062,7 +4087,8 @@ const Home = () => {
                           </g>
                         </g>
                         <g id="bottom-headline" data-v-83cef27e="">
-                          <text fill="#000" data-v-83cef27e="">
+                          <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'one-of-a' : ''}`}
+                        ref={textPathRef}>
                             <textPath
                               startOffset="50%"
                               text-anchor="middle"
@@ -4080,7 +4106,8 @@ const Home = () => {
                           class="sweet-headline"
                           data-v-83cef27e=""
                         >
-                          <text fill="#000" data-v-83cef27e="">
+                          <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'smallbatch' : ''}`}
+                        ref={textPathRef}>
                             <textPath
                               startOffset="75%"
                               text-anchor="middle"
@@ -4095,7 +4122,8 @@ const Home = () => {
                         </g>
                         <g class="tapioca-pearls" data-v-83cef27e="">
                           <g id="tapioca" data-v-83cef27e="">
-                            <text fill="#000" data-v-83cef27e="">
+                            <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'tapico' : ''}`}
+                        ref={textPathRef}>
                               <textPath
                                 startOffset="68%"
                                 text-anchor="middle"
@@ -4109,7 +4137,8 @@ const Home = () => {
                             </text>
                           </g>
                           <g id="pearls" data-v-83cef27e="">
-                            <text fill="#000" data-v-83cef27e="">
+                            <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'perls' : ''}`}
+                        ref={textPathRef}>
                               <textPath
                                 startOffset="83.5%"
                                 text-anchor="middle"
