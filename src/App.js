@@ -2,7 +2,6 @@ import "./App.css";
 import Home from "./components/Home";
 import OurStory from "./components/OurStory";
 import { Routes, Route } from "react-router-dom";
-import Example from "./components/Example";
 
 function App() {
   return (

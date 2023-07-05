@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect,useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../assets/svg/headerx.svg";
 import TM from "../assets/svg/tm.svg";
 import WhiteArrowLeft from "../assets/svg/white-arrow-left.svg";
@@ -20,15 +20,15 @@ import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
 import { Fade } from "react-awesome-reveal"
 import { useInView } from 'react-intersection-observer';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Home = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [count, setCount] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
 
-  // const scrollRef = useRef(null);
-  // const svgRef = useRef(null);
+
   const target = 6;
   const images = [
     "https://images.ctfassets.net/j8k8klriwj2h/01MWGFwgHjGFGI8nElbR9Y/7afe1d857f61eab7bb57b91edf7f4522/Salted_Ube_Smores.png?h=358&w=312&q=80&fit=fill&&fm=webp&q=80",
@@ -150,50 +150,41 @@ const Home = () => {
   }
   window.addEventListener("scroll", handleScroll);
 
-  
-  
-  
 
-  // for svg circular path rotation
-  // useEffect(() => {
-  //   const options = {
-  //     root: null,
-  //     rootMargin: '0px',
-  //     threshold: 0.5, // Adjust the threshold as needed
-  //   };
 
-  //   const callback = (entries, observer) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         // Add the animation class to rotate the text
-  //         svgRef.current.classList.add('scoop-svg');
-  //         observer.unobserve(entry.target);
-  //       }
-  //     });
-  //   };
 
-  //   const observer = new IntersectionObserver(callback, options);
-  //   observer.observe(svgRef.current);
 
-  //   return () => {
-  //     observer.disconnect();
-  //   };
-  // }, []);
-  
 
-// for Circular text rotation
-  
+
+
+  // for Circular text rotation
+
   const [ref, inView] = useInView({
-    triggerOnce: false, // Only trigger once when the element comes into view
+    triggerOnce: true, // Only trigger once when the element comes into view
     threshold: 0.5, // Adjust the threshold as needed
   });
   const textPathRef = useRef(null);
 
   useEffect(() => {
+
     if (inView) {
       setIsVisible(true);
+      console.log("Amir");
     }
   }, [inView]);
+  //   useEffect(() => {
+  //     const handleScroll = () => {
+  //         setIsVisible(window.scrollY > 96);
+  //     }
+  //     window.addEventListener('scroll', handleScroll)
+  //     return () => window.removeEventListener('scroll', handleScroll);
+  // },[])
+
+  // AOS Animation Initilization
+  AOS.init();
+  AOS.refresh();
+
+
 
   const styles1 = {
     "--66144870": "rotate(40deg)",
@@ -370,7 +361,7 @@ const Home = () => {
               className="should-animate row align-items-center justify-content-between boba-text"
               data-v-582e57fe
               style={{ opacity: 1 }}
-              
+
             >
               <a
                 href="/"
@@ -685,7 +676,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                               
+
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -732,7 +723,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                
+
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -779,7 +770,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                
+
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -826,7 +817,7 @@ const Home = () => {
                               data-v-8218c6fe=" "
                             >
                               <div data-v-23b40a86=" " className=" ">
-                                
+
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -873,7 +864,7 @@ const Home = () => {
                               data-v-8218c6fe=""
                             >
                               <div data-v-23b40a86="" className="">
-                                
+
                                 <img
                                   src={currentSlide.image}
                                   draggable="false "
@@ -3107,20 +3098,23 @@ const Home = () => {
                     data-id="waypoint-47 "
                     className="synchronized-waypoint headline position-absolute w-100 on-top "
                     data-v-8390fb7c=" "
+                    data-aos="fade-up"
+                    data-aos-duration="1500"
                   >
-                     <Fade direction="up">
+                    {/* <Fade direction="up"> */}
                     <h2
                       data-preset="opacity,y "
                       data-delay=".1 "
                       className="f1-custom f2-sm f1-4-xl color-red d-flex flex-column text-center w-100 pp-bold should-animate"
                       data-v-8390fb7c=" "
                       style={{ opacity: 1 }}
+                    // data-aos="fade-up"
                     >
                       <span data-v-8390fb7c=" ">NAME</span>
                       <span data-v-8390fb7c=" ">A MORE</span>
                       <span data-v-8390fb7c=" ">ICONIC DUO</span>
-                      </h2>
-                      </Fade>
+                    </h2>
+                    {/* </Fade> */}
                   </div>
                 </div>
                 <div className="ctf-rays-component">
@@ -3164,8 +3158,9 @@ const Home = () => {
                         ></rect>
                       </svg>
                     </div>
-                    <Fade direction="up">
-                    <div data-v-7743ff1f="">
+                    {/* <Fade direction="up"> */}
+                    <div data-v-7743ff1f="" data-aos="fade-up"
+                      data-aos-duration="1500">
                       <svg
                         viewBox="0 0 2713 3360"
                         fill="none"
@@ -3292,7 +3287,7 @@ const Home = () => {
                               transformOrigin: "0px 0px",
                             }}
                           >
-                            
+
                             <text fill="#FFB800" data-v-0487c446="">
                               <textPath
                                 startOffset="50%"
@@ -3459,8 +3454,8 @@ const Home = () => {
                           </text>
                         </g>
                       </svg>
-                      </div>
-                      </Fade>
+                    </div>
+                    {/* </Fade> */}
                   </div>
                 </div>
                 <div className="ctf-scoop-component">
@@ -3484,7 +3479,7 @@ const Home = () => {
                       className="synchronized-waypoint marker marker marker--2"
                       data-v-3bdf0771=""
                     ></div>
-                    
+
                     <svg
                       viewBox="0 0 2316 1919"
                       fill="none"
@@ -3492,7 +3487,7 @@ const Home = () => {
                       class="scoop-svg"
                       data-v-83cef27e=""
                       data-v-3bdf0771=""
-                      // ref={svgRef}
+                    // ref={svgRef}
                     >
                       <defs data-v-83cef27e="">
                         <path
@@ -4007,7 +4002,7 @@ const Home = () => {
                         </g>
                         <g id="top-headline" data-v-83cef27e="" >
                           <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'smallbatch' : ''}`}
-                        ref={textPathRef}>
+                            ref={textPathRef}>
                             <textPath
                               startOffset="50%"
                               text-anchor="middle"
@@ -4034,7 +4029,7 @@ const Home = () => {
                               opacity: 1,
                             }}
                             class={`${isVisible ? 'rightarrow' : ''}`}
-                        ref={textPathRef}
+                            ref={textPathRef}
                           >
                             <rect
                               id="Rectangle 331"
@@ -4067,7 +4062,7 @@ const Home = () => {
                               opacity: 1,
                             }}
                             class={`${isVisible ? 'leftarrow' : ''}`}
-                        ref={textPathRef}
+                            ref={textPathRef}
                           >
                             <rect
                               id="Rectangle 330"
@@ -4088,7 +4083,7 @@ const Home = () => {
                         </g>
                         <g id="bottom-headline" data-v-83cef27e="">
                           <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'one-of-a' : ''}`}
-                        ref={textPathRef}>
+                            ref={textPathRef}>
                             <textPath
                               startOffset="50%"
                               text-anchor="middle"
@@ -4107,7 +4102,7 @@ const Home = () => {
                           data-v-83cef27e=""
                         >
                           <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'smallbatch' : ''}`}
-                        ref={textPathRef}>
+                            ref={textPathRef}>
                             <textPath
                               startOffset="75%"
                               text-anchor="middle"
@@ -4123,7 +4118,7 @@ const Home = () => {
                         <g class="tapioca-pearls" data-v-83cef27e="">
                           <g id="tapioca" data-v-83cef27e="">
                             <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'tapico' : ''}`}
-                        ref={textPathRef}>
+                              ref={textPathRef}>
                               <textPath
                                 startOffset="68%"
                                 text-anchor="middle"
@@ -4138,7 +4133,7 @@ const Home = () => {
                           </g>
                           <g id="pearls" data-v-83cef27e="">
                             <text fill="#000" data-v-83cef27e="" class={`${isVisible ? 'perls' : ''}`}
-                        ref={textPathRef}>
+                              ref={textPathRef}>
                               <textPath
                                 startOffset="83.5%"
                                 text-anchor="middle"
@@ -4163,8 +4158,8 @@ const Home = () => {
                           ></rect>
                         </clipPath>
                       </defs>
-                      </svg>
-                      
+                    </svg>
+
                   </div>
                 </div>
                 <div
@@ -4172,7 +4167,7 @@ const Home = () => {
                   className="synchronized-waypoint headline-in-circle position-relative"
                   data-v-3479b4ac=""
                 >
-                 
+
                   <svg
                     viewBox="0 0 2004 3096"
                     fill="none"
@@ -4238,8 +4233,8 @@ const Home = () => {
                         transform="matrix(0.7,0,0,0.7,300.6,95.7)"
                       ></ellipse>
                     </g>
-                    </svg>
-                    
+                  </svg>
+
                   <div
                     data-id="waypoint-61"
                     className="synchronized-waypoint animation-marker3"
@@ -4609,119 +4604,120 @@ const Home = () => {
                       </g>
                     </g>
                   </svg>
-                  
-                    <div
+
+                  <div
                     className="content-wrapper color-purple d-flex flex-column flex-center center-x position-absolute z-2"
                     data-v-3479b4ac=""
                     style={{ color: "#A380AE" }}
+
                   >
-                     <Fade direction="up">
-                    <h2
-                      className="f2 f3-sm f3-xl pp-bold top-headline stagger-animation pb-0-75"
-                      data-v-3479b4ac=""
-                      style={{
-                        translate: "none",
-                        rotate: "none",
-                        scale: "none",
-                        transform: "translate(0px, 100px)",
-                        opacity: 1,
-                      }}
-                    >
-                      AFTER
+                    <Fade direction="up">
+                      <h2
+                        className="f2 f3-sm f3-xl pp-bold top-headline stagger-animation pb-0-75"
+                        data-v-3479b4ac=""
+                        style={{
+                          translate: "none",
+                          rotate: "none",
+                          scale: "none",
+                          transform: "translate(0px, 100px)",
+                          opacity: 1,
+                        }}
+                      >
+                        AFTER
                       </h2>
-                      {/* </Fade> */}
-                    <div
-                      data-id="waypoint-62"
-                      className="synchronized-waypoint position-relative image-wrapper stagger-animation"
-                      data-v-3479b4ac=""
-                      style={{
-                        translate: "none",
-                        rotate: "none",
-                        scale: "none",
-                        transform: "translate(0px, 100px)",
-                        opacity: 1,
-                      }}
-                    >
-                     {/* <Fade bottom> */}
-                      <img
-                        src={images[imageIndex]}
-                        draggable="false"
-                        loading="eager"
-                        alt="Churro Raspberry-min"
-                        className="w-100 h-100  t-0 l-0 picture cover bg-center"
-                        data-v-23b40a86=""
+
+                      <div
+                        data-id="waypoint-62"
+                        className="synchronized-waypoint position-relative image-wrapper stagger-animation"
+                        data-v-3479b4ac=""
+                        style={{
+                          translate: "none",
+                          rotate: "none",
+                          scale: "none",
+                          transform: "translate(0px, 100px)",
+                          opacity: 1,
+                        }}
+                      >
+                        {/* <Fade bottom> */}
+                        <img
+                          src={images[imageIndex]}
+                          draggable="false"
+                          loading="eager"
+                          alt="Churro Raspberry-min"
+                          className="w-100 h-100  t-0 l-0 picture cover bg-center"
+                          data-v-23b40a86=""
                         />
                         {/* </Fade> */}
-                    </div>
-                    <div
-                      className="no-wrap f2 f3-sm f3-xl pp-bold bottom-headline stagger-animation"
-                      data-v-3479b4ac=""
-                      style={{
-                        translate: "none",
-                        rotate: "none",
-                        scale: "none",
-                        transform: "translate(0px, 100px)",
-                        opacity: 1,
-                      }}
-                    >
-                      {/* <Fade bottom> */}
-                   <span className="mr-negative" data-v-3479b4ac="">
-                        ONE
+                      </div>
+                      <div
+                        className="no-wrap f2 f3-sm f3-xl pp-bold bottom-headline stagger-animation"
+                        data-v-3479b4ac=""
+                        style={{
+                          translate: "none",
+                          rotate: "none",
+                          scale: "none",
+                          transform: "translate(0px, 100px)",
+                          opacity: 1,
+                        }}
+                      >
+                        {/* <Fade bottom> */}
+                        <span className="mr-negative" data-v-3479b4ac="">
+                          ONE
                         </span>
-                      {/* </Fade> */}
-                      {/* <Fade bottom> */}
-                      <span className="ml-negative" data-v-3479b4ac="">
-                        BITE,
-                      </span>
-                      {/* </Fade> */}
-                      
-                    </div>
-                    {/* <Fade bottom> */}
-                    <h3
-                      className="f4 f8-sm f5-xl pp-bold text-uppercase text-center"
-                      data-v-3479b4ac=""
-                    >
-                      <span
-                        className="stagger-animation d-block"
+                        {/* </Fade> */}
+                        {/* <Fade bottom> */}
+                        <span className="ml-negative" data-v-3479b4ac="">
+                          BITE,
+                        </span>
+                        {/* </Fade> */}
+
+                      </div>
+
+                      <h3
+                        className="f4 f8-sm f5-xl pp-bold text-uppercase text-center"
                         data-v-3479b4ac=""
-                        style={{
-                          translate: "none",
-                          rotate: "none",
-                          scale: "none",
-                          transform: "translate(0px, 100px)",
-                          opacity: 1,
-                        }}
                       >
-                        You'll never
-                      </span>
-                      <span
-                        className="stagger-animation d-block"
-                        data-v-3479b4ac=""
-                        style={{
-                          translate: "none",
-                          rotate: "none",
-                          scale: "none",
-                          transform: "translate(0px, 100px)",
-                          opacity: 1,
-                        }}
-                      >
-                        go back to basic
-                      </span>
-                      <span
-                        className="stagger-animation d-block"
-                        data-v-3479b4ac=""
-                        style={{
-                          translate: "none",
-                          rotate: "none",
-                          scale: "none",
-                          transform: "translate(0px, 100px)",
-                          opacity: 1,
-                        }}
-                      >
-                        ice cream
-                      </span>
+                        <span
+                          className="stagger-animation d-block"
+                          data-v-3479b4ac=""
+                          style={{
+                            translate: "none",
+                            rotate: "none",
+                            scale: "none",
+                            transform: "translate(0px, 100px)",
+                            opacity: 1,
+                          }}
+                        >
+                          You'll never
+                        </span>
+                        <span
+                          className="stagger-animation d-block"
+                          data-v-3479b4ac=""
+                          style={{
+                            translate: "none",
+                            rotate: "none",
+                            scale: "none",
+                            transform: "translate(0px, 100px)",
+                            opacity: 1,
+                          }}
+                        >
+                          go back to basic
+                        </span>
+                        <span
+                          className="stagger-animation d-block"
+                          data-v-3479b4ac=""
+                          style={{
+                            translate: "none",
+                            rotate: "none",
+                            scale: "none",
+                            transform: "translate(0px, 100px)",
+                            opacity: 1,
+                          }}
+                        >
+                          ice cream
+                        </span>
                       </h3>
-                      </Fade>
+                    </Fade>
                     <img
                       src={WhiteArrowLeft}
                       alt="Boba Ice cream"
@@ -4734,10 +4730,10 @@ const Home = () => {
                         transform: "translate(0px, 100px) rotate(-90deg)",
                         opacity: 1,
                       }}
-                      />
-                      
+                    />
+
                   </div>
-                  
+
                 </div>
                 <div
                   className="ctf-slider-component position-relative"
@@ -5112,7 +5108,7 @@ const Home = () => {
                                             data-v-23b40a86=""
                                           />
                                         </picture>
-                                        
+
                                       </div>
                                     </figure>
                                   </div>
@@ -6604,12 +6600,13 @@ const Home = () => {
                       className="hash-wrapper mb-3 mb-md-0"
                       data-v-20b31861=""
                     >
-                      <Fade direction="up">
-                        <div
+                      <div
                         data-preset="y"
                         data-delay=".1"
                         className="position-relative should-animate hash-bg"
                         data-v-20b31861=""
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
                         style={{ opacity: 1 }}
                       >
                         <img
@@ -6639,7 +6636,6 @@ const Home = () => {
                           style={{ opacity: 1 }}
                         />
                       </div>
-                      </Fade>
                     </div>
                     <div className="col-12 d-flex" data-v-20b31861="">
                       <div
@@ -6916,73 +6912,77 @@ const Home = () => {
                     data-id="waypoint-114"
                     className="synchronized-waypoint"
                     data-v-20b31861=""
-                    
+
                   >
-                    <Fade direction="up">
-                      <div
+
+                    <div
                       data-preset="opacity,y"
                       data-delay=".1"
                       className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate "
                       data-v-20b31861=""
-                     
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
                       style={{ opacity: 1 }}
                     >
                       PROUDLY AAPI⁃OWNED! A PORTION OF THE PROCEEDS, OF EVERY
                       PINT SOLD, GOES TO SUPPORT AAPI COMMUNITIES IN NEED.
                     </div>
-                    </Fade>
+
                   </div>
                 </div>
                 <div
                   data-id="waypoint-116"
                   className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
                   data-v-709f7a56=""
+
                 >
                   <Fade direction="up">
                     <div
-                    data-preset="y"
-                    data-delay=".2"
-                    className="row justify-content-center justify-content-sm-between should-animate"
-                    data-v-709f7a56
-                    style={{ opacity: 1 }}
-                    
-                  >
-                    <a
-                      href="/"
-                      aria-current="page"
-                      className="mb-1 mb-sm-0 logo-wrapper router-link-exact-active router-link-active"
-                      data-v-709f7a56=""
-                      style={{ color: "#ea1b0e !important" }}
-                    >
-                      <img
-                        src={Logo}
-                        width="172"
-                        height="26"
-                        alt="Boba Logo"
-                        className="logo"
-                        data-v-709f7a56=""
-                      />
-                    </a>
-                    <div
-                      className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom"
-                      data-v-709f7a56=""
+                      data-preset="y"
+                      data-delay=".2"
+                      className="row justify-content-center justify-content-sm-between should-animate"
+                      data-v-709f7a56
+
+                      style={{ opacity: 1 }}
+
                     >
                       <a
-                        href="/privacy-policy"
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                        href="/"
+                        aria-current="page"
+                        className="mb-1 mb-sm-0 logo-wrapper router-link-exact-active router-link-active"
                         data-v-709f7a56=""
+                        style={{ color: "#ea1b0e !important" }}
                       >
-                        Privacy Policy
+                        <img
+                          src={Logo}
+                          width="172"
+                          height="26"
+                          alt="Boba Logo"
+                          className="logo"
+                          data-v-709f7a56=""
+                        />
                       </a>
-                      <a
-                        href="/terms-and-conditions"
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                      <div
+                        className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom"
                         data-v-709f7a56=""
+
                       >
-                        Terms &amp; Conditions
-                      </a>
+                        <a
+                          href="/privacy-policy"
+                          className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                          data-v-709f7a56=""
+                        >
+                          Privacy Policy
+                        </a>
+                        <a
+                          href="/terms-and-conditions"
+                          className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                          data-v-709f7a56=""
+                        >
+                          Terms &amp; Conditions
+                        </a>
+                      </div>
                     </div>
-                  </div>
                   </Fade>
                 </div>
               </div>

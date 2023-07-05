@@ -46458,8 +46458,9 @@ button.swiper-pagination-bullet {
         transform: rotate(0deg);
     }
 }
-.smallbatch{
-animation: rotateSmallBatch 2s forwards;
+
+.smallbatch {
+    animation: rotateSmallBatch 2s forwards;
     transform-origin: bottom;
 }
 
@@ -46472,10 +46473,12 @@ animation: rotateSmallBatch 2s forwards;
         transform: rotate(0deg);
     }
 }
-.one-of-a{
+
+.one-of-a {
     animation: rotateOneOfA 2s forwards;
     transform-origin: bottom;
 }
+
 @keyframes rotateOneOfA {
     0% {
         transform: rotate(90deg);
@@ -46500,6 +46503,7 @@ animation: rotateSmallBatch 2s forwards;
         transform: rotate(0deg);
     }
 }
+
 .perls {
     animation: rotatePerls 2s forwards;
     transform-origin: top;
@@ -46515,10 +46519,11 @@ animation: rotateSmallBatch 2s forwards;
     }
 }
 
-.leftarrow{
+.leftarrow {
     animation: rotateLeftArrow 3s forwards;
     transform-origin: bottom;
 }
+
 @keyframes rotateLeftArrow {
     0% {
         transform: rotate(-90deg);
@@ -46528,6 +46533,7 @@ animation: rotateSmallBatch 2s forwards;
         transform: rotate(0deg);
     }
 }
+
 .rightarrow {
     animation: rotateRightArrow 3s forwards;
     transform-origin: bottom;
@@ -46543,32 +46549,32 @@ animation: rotateSmallBatch 2s forwards;
     }
 }
 
-.happiness{
-        animation: rotateHappiness 5s forwards;
-        transform-origin: center;
+.happiness {
+    animation: rotateHappiness 5s forwards;
+    transform-origin: center;
+}
+
+@keyframes rotateHappiness {
+    0% {
+        transform: rotate(-90deg);
     }
 
-    @keyframes rotateHappiness {
-        0% {
-            transform: rotate(-90deg);
-        }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
-        100% {
-            transform: rotate(0deg);
-        }
+.delivered {
+    animation: rotateDelivered 5s forwards;
+    transform-origin: center;
+}
+
+@keyframes rotateDelivered {
+    0% {
+        transform: rotate(90deg);
     }
 
-.delivered{
-        animation: rotateDelivered 5s forwards;
-        transform-origin: center;
+    100% {
+        transform: rotate(0deg);
     }
-
-    @keyframes rotateDelivered {
-        0% {
-            transform: rotate(90deg);
-        }
-
-        100% {
-            transform: rotate(0deg);
-        }
-    }
+}

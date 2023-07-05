@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/aria-proptypes */
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/no-distracting-elements */
-import React, { useState, useEffect,useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./content.css";
 import "../../src/index.css";
 import { Link } from "react-router-dom";
@@ -26,6 +26,8 @@ import "swiper/css/effect-fade";
 import "swiper/swiper.min.css";
 import { Fade } from "react-awesome-reveal";
 import { useInView } from 'react-intersection-observer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const OurStory = () => {
   const [rotation, setRotation] = useState(0);
   const [isForward, setIsForward] = useState(true);
@@ -74,7 +76,7 @@ const OurStory = () => {
     transform: `translate(0px, -20%) scale(${scale}, ${scale})`,
   };
 
- 
+
 
   // for how-it-began rotation
 
@@ -90,7 +92,7 @@ const OurStory = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Add the animation class to rotate the text
-          svgRef.current.classList.add('how-it-began','our-communities','supporting','Happiness');
+          svgRef.current.classList.add('how-it-began', 'our-communities', 'supporting', 'Happiness');
           observer.unobserve(entry.target);
         }
       });
@@ -102,7 +104,7 @@ const OurStory = () => {
     const handleScroll = () => {
       if (svgRef.current && isScrolledIntoView(svgRef.current)) {
         // Add the animation class to rotate the text
-        svgRef.current.classList.add('how-it-began','our-communities','supporting','Happiness');
+        svgRef.current.classList.add('how-it-began', 'our-communities', 'supporting', 'Happiness');
         window.removeEventListener('scroll', handleScroll);
       }
     };
@@ -121,8 +123,8 @@ const OurStory = () => {
     return rect.top >= 0 && rect.bottom <= windowHeight;
   };
 
-// for Circular text rotation
-  
+  // for Circular text rotation
+
   const [ref, inView] = useInView({
     triggerOnce: true, // Only trigger once when the element comes into view
     threshold: 0.5, // Adjust the threshold as needed
@@ -136,9 +138,12 @@ const OurStory = () => {
   }, [inView]);
 
 
-  
-  
-  
+
+
+  // AOS Animation Initilization
+  AOS.init();
+  AOS.refresh();
+
   const stylesMain = {
     "--white": "#f3efe6",
     "--whitev2": "#ffffff",
@@ -418,8 +423,8 @@ const OurStory = () => {
     <div id="__nuxt">
       <div id="__layout">
         <main style={stylesMain}>
-      {/* <div ref={ref} className="scroll-trigger"/> */}
-          
+          {/* <div ref={ref} className="scroll-trigger"/> */}
+
           <div
             data-id="waypoint-10"
             className="synchronized-waypoint navigation px-0-875 px-sm-1-75 px-xl-2 py-0-75 py-lg-1-25 position-absolute t-0 l-0 w-100 on-top white"
@@ -653,7 +658,7 @@ const OurStory = () => {
           >
             <div className="scroller overflow-hidden">
               <div className="basic-page">
-                <div ref={ref} className="scroll-trigger"/>
+                <div ref={ref} className="scroll-trigger" />
                 <div className="about-header bg-yellow4 pt-3 pt-sm-5">
                   <div className="text-center mx-auto pp-bold color-red text-uppercase position-relative boba-title-h1">
                     <div
@@ -813,24 +818,24 @@ const OurStory = () => {
                   </div>
                 </div>
                 <div className="curved-headline-and-circular-image position-relative pb-10 pb-sm-13 pb-xl-30">
-                
+
                   <div
                     data-id="waypoint-237"
                     className="synchronized-waypoint waypoint-offset"
                   ></div>
-                  
+
                   <div
                     data-id="waypoint-238"
                     className="synchronized-waypoint position-relative"
                   >
-                    
-                      <svg
+
+                    <svg
                       data-v-791b065e=""
                       viewBox="0 0 2192 1539"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       className="svg-curved-text svg-bg position-relative center-x"
-                       
+
                     >
                       <ellipse
                         data-v-791b065e=""
@@ -879,7 +884,7 @@ const OurStory = () => {
                           text-anchor="middle"
                           xlinkHref="#textpath1"
                           className="curved-textpath1 pp-bold text-uppercase curvedHeadlineBig"
-                          
+
                         >
                           Happiness
                         </textPath>
@@ -904,7 +909,7 @@ const OurStory = () => {
                           text-anchor="middle"
                           xlinkHref="#textpath3"
                           className="curved-textpath3 pp-bold text-uppercase curvedHeadlineSmall"
-                          
+
                         >
                           We believe food has the power to unite
                         </textPath>
@@ -922,8 +927,8 @@ const OurStory = () => {
                         </textPath>
                       </text>
                     </svg>
-                    
-                    
+
+
                     <div className="image-holder position-absolute mx-auto z-1">
                       <figure
                         data-v-23b40a86=""
@@ -1096,49 +1101,43 @@ const OurStory = () => {
                         data-id="waypoint-245"
                         className="synchronized-waypoint overflow-hidden"
                       >
-                        
-                        <Fade direction="up">
-                          <div
+
+                        <div
                           data-v-6dc35003=""
                           className="inner position-relative lh-1-05 color-red6 pp-bold text-center text-uppercase f3-3-xs f6-2-sm f3-2-xl"
+                          data-aos="fade-up"
+                          data-aos-duration="1500"
                           style={{
-                            translate: "none",
-                            rotate: "none",
-                            scale: "none",
-                            opacity: 1,
-                            transform: "translate(0px, 0px)",
+
+                            marginBottom: "20px"
                           }}
                         >
                           Our promise
                           <br className="d-lg-none" />
                         </div>
-                        </Fade>
                       </div>
                       <div
                         data-v-6dc35003=""
                         data-id="waypoint-247"
                         className="synchronized-waypoint overflow-hidden"
                       >
-                        <Fade direction="up">
-                          <div
+                        <div
                           data-v-6dc35003=""
                           className="inner position-relative on-top bottom-headline-offset pt-xl-1-25 color-red6 pp-bold text-center text-uppercase f1-3-xs  f1-0-xl"
+                          data-aos="fade-up"
+                          data-aos-duration="1500"
                           style={{
-                            translate: "none",
-                            rotate: "none",
-                            scale: "none",
-                            opacity: 1,
-                            transform: "translate(0px, 0px)",
+
+                            marginBottom: "20px"
                           }}
                         >
                           deliver happiness.
                         </div>
-                        </Fade>
                       </div>
                     </div>
                   </div>
-                  </div>
-                  
+                </div>
+
                 <div
                   className="two-images-and-bubbles color-white position-relative mb-sm-4 mb-xl-12"
                   bubblesgroup="[object Object]"
@@ -2005,11 +2004,13 @@ const OurStory = () => {
                         className="should-animate"
                         style={{ opacity: 1 }}
                       >
-                        
-                        <Fade direction="up">
-                          <figure
+
+                        {/* <Fade direction="up"> */}
+                        <figure
                           data-v-23b40a86=""
                           className="spd overflow-hidden image mx-auto position-relative"
+                          data-aos="fade-up"
+                          data-aos-duration="1500"
                           style={stylesF6}
                         >
                           <div data-v-23b40a86="" className="">
@@ -2056,7 +2057,7 @@ const OurStory = () => {
                             </picture>
                           </div>
                         </figure>
-                        </Fade>
+                        {/* </Fade> */}
                       </div>
                       <svg
                         data-v-16c2f99a=""
@@ -2064,7 +2065,7 @@ const OurStory = () => {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                         className="curved-text bottom-curved-text"
-                        
+
                       >
                         <defs data-v-16c2f99a="">
                           <path
@@ -2089,7 +2090,7 @@ const OurStory = () => {
                           </textPath>
                         </text>
                       </svg>
-                     
+
 
                       <div
                         data-v-4bd6f78a=""
@@ -2263,15 +2264,14 @@ const OurStory = () => {
                     data-id="waypoint-269"
                     className="synchronized-waypoint overflow-hidden magic-font-offset"
                   >
-                    <Fade direction="up">
-                      <div
+                    <div
                       data-v-6dc35003=""
                       className="inner position-relative text-uppercase color-red lh-1-05 f2-2 f3-1-sm f1-1-xl pp-bold"
+                      data-aos="fade-up"
                       style={{ opacity: 1 }}
                     >
                       A magical duo of boba
                     </div>
-                    </Fade>
                   </div>
                   <div className="position-relative mt-1">
                     {/* <div
@@ -2663,8 +2663,7 @@ const OurStory = () => {
                       />
                     </div> */}
                   </div>
-                  <Fade direction="up">
-<div className="d-flex text-uppercase color-red f2-2 f3-1-sm f1-1-xl pp-bold pt-0-625 mb-0-25 mb-sm-0 pt-md-1 text-center ">
+                  <div className="d-flex text-uppercase color-red f2-2 f3-1-sm f1-1-xl pp-bold pt-0-625 mb-0-25 mb-sm-0 pt-md-1 text-center " data-aos="fade-up">
                     <div className="mr-3 mr-md-7 mr-xl-13 position-relative ">
                       <div
                         data-v-6dc35003=" "
@@ -2684,13 +2683,7 @@ const OurStory = () => {
                           data-v-4bd6f78a=" "
                           data-id="waypoint-280 "
                           className="synchronized-waypoint floating-bubble "
-                          //   style={{
-                          //     translate: "none",
-                          //     rotate: "none",
-                          //     scale: "none",
-                          //     transform:
-                          //       "translate3d(-0.5706%, 1.3377%, 0px) rotate(-223.225deg)",
-                          //   }}
+
                           style={transformStyle}
                         >
                           <div
@@ -2769,7 +2762,7 @@ const OurStory = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-xl-flex bottom-text-offset position-relative ">
+                  <div className="d-xl-flex bottom-text-offset position-relative" data-aos="fade-up">
                     <div
                       data-v-6dc35003=" "
                       data-id="waypoint-284 "
@@ -2807,8 +2800,7 @@ const OurStory = () => {
                       />
                     </div>
                   </div>
-                  </Fade>
-                  
+
                 </div>
                 <div
                   data-id="waypoint-287 "
@@ -4448,10 +4440,11 @@ const OurStory = () => {
                   data-id="waypoint-291 "
                   className="synchronized-waypoint team px-0-5 pt-xl-5-5 py-2 px-lg-1 position-relative bg-gray "
                 >
-                  <Fade direction="up">
-                    <div
+
+                  <div
                     data-v-5a623b3d=" "
                     className="color-red text-center d-flex flex-column pp-bold text-uppercase lh-12 z-2 position-relative "
+                    data-aos="fade-up"
                   >
                     <span
                       data-v-5a623b3d=" "
@@ -4487,14 +4480,14 @@ const OurStory = () => {
                       Things Up!
                     </span>
                   </div>
-                  </Fade>
+
 
                   <div data-v-5a623b3d=" " className="position-relative">
                     <button
                       data-v-5a623b3d=" "
                       aria-label="arrow-button "
                       className="arrow-button position-absolute color-black d-none d-lg-block "
-                      
+
                     >
                       <img
                         data-v-5a623b3d=" "
@@ -4502,1841 +4495,1841 @@ const OurStory = () => {
                         src={b7a}
                       />
                     </button>
-                    
-                    <div
-                          data-v-5a623b3d=" "
-                          className="d-none d-lg-inline-flex align-items-start "
-                        >
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="0 "
-                            style={stylesE17}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath292 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="20% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath292 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Charn
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Chief happiness maker "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE18}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Charn "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot ">
-                              <div
-                                data-v-5a623b3d=" "
-                                data-v-9c24d646=" "
-                                className="bubble-wrapper-0 "
-                              >
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  data-v-5a623b3d=" "
-                                  data-id="waypoint-295 "
-                                  className="synchronized-waypoint floating-bubble bubble bubble-1 "
-                                  data-v-9c24d646=" "
-                                  //   style={{
-                                  //     translate: "none",
-                                  //     rotate: "none",
-                                  //     scale: "none",
-                                  //     transform:
-                                  //       "translate3d(-0.3474%, -31.7151%, 0px) rotate(11.8518deg)",
-                                  //   }}
-                                  style={transformStyle}
-                                >
-                                  <div
-                                    data-v-4bd6f78a=" "
-                                    className="wrapper "
-                                    style={{
-                                      opacity: 1,
-                                      translate: "none",
-                                      rotate: "none",
-                                      scale: "none",
-                                      transform: "translate(0px, 0%)",
-                                    }}
-                                  >
-                                    <svg
-                                      data-v-4bd6f78a=" "
-                                      width="195 "
-                                      height="194 "
-                                      viewBox="0 0 195 194 "
-                                      fill="none "
-                                      xmlns="http://www.w3.org/2000/svg "
-                                      className="w-100 h-100 "
-                                    >
-                                      <ellipse
-                                        data-v-4bd6f78a=" "
-                                        cx="97.0409 "
-                                        cy="96.8766 "
-                                        rx="76.4975 "
-                                        ry="76.2338 "
-                                        transform="rotate(-18.8688 97.0409 96.8766) "
-                                        fill="#473D36 "
-                                      ></ellipse>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                        stroke="#473D36 "
-                                        stroke-width="2.45915 "
-                                        stroke-linecap="round "
-                                      ></path>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="134.577 "
-                                        cy="85.9991 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 134.577 85.9991) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="117.053 "
-                                        cy="85.2973 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 117.053 85.2973) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                        fill="#F3EFE6 "
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  data-v-5a623b3d=" "
-                                  data-id="waypoint-297 "
-                                  className="synchronized-waypoint floating-bubble bubble bubble-2 "
-                                  data-v-9c24d646=" "
-                                  //   style={{
-                                  //     translate: "none",
-                                  //     rotate: "none",
-                                  //     scale: "none",
-                                  //     transform:
-                                  //       "translate3d(2.244%, -11.7539%, 0px) rotate(-11.8518deg)",
-                                  //   }}
-                                  style={transformStyle}
-                                >
-                                  <div
-                                    data-v-4bd6f78a=" "
-                                    className="wrapper "
-                                    style={{
-                                      opacity: 1,
-                                      translate: "none",
-                                      rotate: "none",
-                                      scale: "none",
-                                      transform: "translate(0px, 0%)",
-                                    }}
-                                  >
-                                    <svg
-                                      data-v-4bd6f78a=" "
-                                      width="195 "
-                                      height="194 "
-                                      viewBox="0 0 195 194 "
-                                      fill="none "
-                                      xmlns="http://www.w3.org/2000/svg "
-                                      className="w-100 h-100 "
-                                    >
-                                      <ellipse
-                                        data-v-4bd6f78a=" "
-                                        cx="97.0409 "
-                                        cy="96.8766 "
-                                        rx="76.4975 "
-                                        ry="76.2338 "
-                                        transform="rotate(-18.8688 97.0409 96.8766) "
-                                        fill="#473D36 "
-                                      ></ellipse>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                        stroke="#473D36 "
-                                        stroke-width="2.45915 "
-                                        stroke-linecap="round "
-                                      ></path>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="134.577 "
-                                        cy="85.9991 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 134.577 85.9991) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="117.053 "
-                                        cy="85.2973 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 117.053 85.2973) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                        fill="#F3EFE6 "
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  data-v-5a623b3d=" "
-                                  data-id="waypoint-299 "
-                                  className="synchronized-waypoint floating-bubble bubble bubble-3 "
-                                  data-v-9c24d646=" "
-                                  style={{
-                                    translate: "none",
-                                    rotate: "none",
-                                    scale: "none",
-                                    transform:
-                                      "translate3d(0.7979%, -22.2875%, 0px) rotate(11.8518deg)",
-                                  }}
-                                >
-                                  <div
-                                    data-v-4bd6f78a=" "
-                                    className="wrapper "
-                                    style={{
-                                      opacity: 0,
-                                      translate: "none",
-                                      rotate: "none",
-                                      scale: "none",
-                                      transform:
-                                        "translate(0px, -20%) scale(0, 0)",
-                                    }}
-                                  >
-                                    <svg
-                                      data-v-4bd6f78a=" "
-                                      width="195 "
-                                      height="194 "
-                                      viewBox="0 0 195 194 "
-                                      fill="none "
-                                      xmlns="http://www.w3.org/2000/svg "
-                                      className="w-100 h-100 "
-                                    >
-                                      <ellipse
-                                        data-v-4bd6f78a=" "
-                                        cx="97.0409 "
-                                        cy="96.8766 "
-                                        rx="76.4975 "
-                                        ry="76.2338 "
-                                        transform="rotate(-18.8688 97.0409 96.8766) "
-                                        fill="#473D36 "
-                                      ></ellipse>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                        stroke="#473D36 "
-                                        stroke-width="2.45915 "
-                                        stroke-linecap="round "
-                                      ></path>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="134.577 "
-                                        cy="85.9991 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 134.577 85.9991) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="117.053 "
-                                        cy="85.2973 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 117.053 85.2973) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                        fill="#F3EFE6 "
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="300 "
-                            style={stylesE19}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath300 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="20% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath300 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Chungi
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Boba "Van Gogh " Director
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Chungi "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot ">
-                              <div
-                                data-v-4bd6f78a=" "
-                                data-v-5a623b3d=" "
-                                data-id="waypoint-303 "
-                                className="synchronized-waypoint floating-bubble bubble "
-                                data-v-9c24d646=" "
-                                // style={{
-                                //   translate: "none",
-                                //   rotate: "none",
-                                //   scale: "none",
-                                //   transform:
-                                //     "translate3d(-6.3203%, -36.051%, 0px) rotate(11.8518deg)",
-                                // }}
-                                style={transformStyle}
-                              >
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  className="wrapper "
-                                  style={{
-                                    opacity: 1,
-                                    translate: "none",
-                                    rotate: "none",
-                                    scale: "none",
-                                    transform: "translate(0px, 0%) ",
-                                  }}
-                                >
-                                  <svg
-                                    data-v-4bd6f78a=" "
-                                    width="195 "
-                                    height="194 "
-                                    viewBox="0 0 195 194 "
-                                    fill="none "
-                                    xmlns="http://www.w3.org/2000/svg "
-                                    className="w-100 h-100 "
-                                  >
-                                    <ellipse
-                                      data-v-4bd6f78a=" "
-                                      cx="97.0409 "
-                                      cy="96.8766 "
-                                      rx="76.4975 "
-                                      ry="76.2338 "
-                                      transform="rotate(-18.8688 97.0409 96.8766) "
-                                      fill="#E07390 "
-                                    ></ellipse>
-                                    <path
-                                      data-v-4bd6f78a=" "
-                                      d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                      stroke="#473D36 "
-                                      stroke-width="2.45915 "
-                                      stroke-linecap="round "
-                                    ></path>
-                                    <circle
-                                      data-v-4bd6f78a=" "
-                                      cx="134.577 "
-                                      cy="85.9991 "
-                                      r="2.11028 "
-                                      transform="rotate(-18.8688 134.577 85.9991) "
-                                      fill="#473D36 "
-                                    ></circle>
-                                    <circle
-                                      data-v-4bd6f78a=" "
-                                      cx="117.053 "
-                                      cy="85.2973 "
-                                      r="2.11028 "
-                                      transform="rotate(-18.8688 117.053 85.2973) "
-                                      fill="#473D36 "
-                                    ></circle>
-                                    <path
-                                      data-v-4bd6f78a=" "
-                                      d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                      fill="#F3EFE6 "
-                                    ></path>
-                                  </svg>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="600 "
-                            style={stylesE20}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath304 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="40% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath304 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Doug
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Chief Boba Tech Wiz "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Doug "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="900 "
-                            style={stylesE21}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath306 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="20% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath306 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Mitch
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Boba Hype Man "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Mitch "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="1200 "
-                            style={stylesE22}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath308 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="25% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath308 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Olivia
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Happiness flavor creator
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE23}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Olivia "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot ">
-                              <div
-                                data-v-5a623b3d=" "
-                                data-v-9c24d646=" "
-                                className="bubble-wrapper-4 "
-                              >
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  data-v-5a623b3d=" "
-                                  data-id="waypoint-311 "
-                                  className="synchronized-waypoint floating-bubble bubble bubble-1 "
-                                  data-v-9c24d646=" "
-                                  //   style={{
-                                  //     translate: "none",
-                                  //     rotate: "none",
-                                  //     scale: "none",
-                                  //     transform:
-                                  //       "translate3d(-4.1728%, -28.6906%, 0px) rotate(11.8518deg)",
-                                  //   }}
-                                  style={transformStyle}
-                                >
-                                  <div
-                                    data-v-4bd6f78a=" "
-                                    className="wrapper "
-                                    style={{
-                                      opacity: 1,
-                                      translate: "none",
-                                      rotate: "none",
-                                      scale: "none",
-                                      transform: "translate(0px, 0%)",
-                                    }}
-                                  >
-                                    <svg
-                                      data-v-4bd6f78a=" "
-                                      width="195 "
-                                      height="194 "
-                                      viewBox="0 0 195 194 "
-                                      fill="none "
-                                      xmlns="http://www.w3.org/2000/svg "
-                                      className="w-100 h-100 "
-                                    >
-                                      <ellipse
-                                        data-v-4bd6f78a=" "
-                                        cx="97.0409 "
-                                        cy="96.8766 "
-                                        rx="76.4975 "
-                                        ry="76.2338 "
-                                        transform="rotate(-18.8688 97.0409 96.8766) "
-                                        fill="#473D36 "
-                                      ></ellipse>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                        stroke="#473D36 "
-                                        stroke-width="2.45915 "
-                                        stroke-linecap="round "
-                                      ></path>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="134.577 "
-                                        cy="85.9991 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 134.577 85.9991) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="117.053 "
-                                        cy="85.2973 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 117.053 85.2973) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                        fill="#F3EFE6 "
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                                <div
-                                  data-v-4bd6f78a=" "
-                                  data-v-5a623b3d=" "
-                                  data-id="waypoint-313 "
-                                  className="synchronized-waypoint floating-bubble bubble bubble-2 "
-                                  data-v-9c24d646=" "
-                                  //   style={{
-                                  //     translate: "none",
-                                  //     rotate: "none",
-                                  //     scale: "none",
-                                  //     transform:
-                                  //       "translate3d(7.6522%, 36.969%, 0px) rotate(11.8518deg)",
-                                  //   }}
-                                  style={transformStyle}
-                                >
-                                  <div
-                                    data-v-4bd6f78a=" "
-                                    className="wrapper "
-                                    style={{
-                                      opacity: 1,
-                                      translate: "none",
-                                      rotate: "none",
-                                      scale: "none",
-                                      transform: "translate(0px, 0%)",
-                                    }}
-                                  >
-                                    <svg
-                                      data-v-4bd6f78a=" "
-                                      width="195 "
-                                      height="194 "
-                                      viewBox="0 0 195 194 "
-                                      fill="none "
-                                      xmlns="http://www.w3.org/2000/svg "
-                                      className="w-100 h-100 "
-                                    >
-                                      <ellipse
-                                        data-v-4bd6f78a=" "
-                                        cx="97.0409 "
-                                        cy="96.8766 "
-                                        rx="76.4975 "
-                                        ry="76.2338 "
-                                        transform="rotate(-18.8688 97.0409 96.8766) "
-                                        fill="#473D36 "
-                                      ></ellipse>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
-                                        stroke="#473D36 "
-                                        stroke-width="2.45915 "
-                                        stroke-linecap="round "
-                                      ></path>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="134.577 "
-                                        cy="85.9991 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 134.577 85.9991) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <circle
-                                        data-v-4bd6f78a=" "
-                                        cx="117.053 "
-                                        cy="85.2973 "
-                                        r="2.11028 "
-                                        transform="rotate(-18.8688 117.053 85.2973) "
-                                        fill="#473D36 "
-                                      ></circle>
-                                      <path
-                                        data-v-4bd6f78a=" "
-                                        d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
-                                        fill="#F3EFE6 "
-                                      ></path>
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="1500 "
-                            style={stylesE24}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath314 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="40% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath314 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Nick
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Boba Fortune Teller
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Nick "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-1 should-animate "
-                            data-preset="x "
-                            data-fromx="1800 "
-                            style={stylesE25}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath316 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="15% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath316 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Mary
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      The Ice Cream Professor
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE23}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Mary "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                        </div>
 
                     <div
-                          data-v-5a623b3d=" "
-                          className="d-lg-none row justify-content-center "
+                      data-v-5a623b3d=" "
+                      className="d-none d-lg-inline-flex align-items-start "
+                    >
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="0 "
+                        style={stylesE17}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
                         >
-                          <div
+                          <svg
                             data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath292 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="20% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath292 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Charn
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Chief happiness maker "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE18}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Charn "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot ">
+                          <div
                             data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0 "
-                            style={stylesE30}
+                            data-v-9c24d646=" "
+                            className="bubble-wrapper-0 "
                           >
                             <div
+                              data-v-4bd6f78a=" "
+                              data-v-5a623b3d=" "
+                              data-id="waypoint-295 "
+                              className="synchronized-waypoint floating-bubble bubble bubble-1 "
                               data-v-9c24d646=" "
-                              className="position-relative "
+                              //   style={{
+                              //     translate: "none",
+                              //     rotate: "none",
+                              //     scale: "none",
+                              //     transform:
+                              //       "translate3d(-0.3474%, -31.7151%, 0px) rotate(11.8518deg)",
+                              //   }}
+                              style={transformStyle}
                             >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
+                              <div
+                                data-v-4bd6f78a=" "
+                                className="wrapper "
+                                style={{
+                                  opacity: 1,
+                                  translate: "none",
+                                  rotate: "none",
+                                  scale: "none",
+                                  transform: "translate(0px, 0%)",
+                                }}
                               >
-                                <defs data-v-9c24d646=" ">
+                                <svg
+                                  data-v-4bd6f78a=" "
+                                  width="195 "
+                                  height="194 "
+                                  viewBox="0 0 195 194 "
+                                  fill="none "
+                                  xmlns="http://www.w3.org/2000/svg "
+                                  className="w-100 h-100 "
+                                >
+                                  <ellipse
+                                    data-v-4bd6f78a=" "
+                                    cx="97.0409 "
+                                    cy="96.8766 "
+                                    rx="76.4975 "
+                                    ry="76.2338 "
+                                    transform="rotate(-18.8688 97.0409 96.8766) "
+                                    fill="#473D36 "
+                                  ></ellipse>
                                   <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath318 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                                    data-v-4bd6f78a=" "
+                                    d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                    stroke="#473D36 "
+                                    stroke-width="2.45915 "
+                                    stroke-linecap="round "
                                   ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath318 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Charn
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Chief happiness maker "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE18}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Charn "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="134.577 "
+                                    cy="85.9991 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 134.577 85.9991) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="117.053 "
+                                    cy="85.2973 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 117.053 85.2973) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                    fill="#F3EFE6 "
+                                  ></path>
+                                </svg>
+                              </div>
                             </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.1 "
-                            style={stylesE30}
-                          >
                             <div
+                              data-v-4bd6f78a=" "
+                              data-v-5a623b3d=" "
+                              data-id="waypoint-297 "
+                              className="synchronized-waypoint floating-bubble bubble bubble-2 "
                               data-v-9c24d646=" "
-                              className="position-relative "
+                              //   style={{
+                              //     translate: "none",
+                              //     rotate: "none",
+                              //     scale: "none",
+                              //     transform:
+                              //       "translate3d(2.244%, -11.7539%, 0px) rotate(-11.8518deg)",
+                              //   }}
+                              style={transformStyle}
                             >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
+                              <div
+                                data-v-4bd6f78a=" "
+                                className="wrapper "
+                                style={{
+                                  opacity: 1,
+                                  translate: "none",
+                                  rotate: "none",
+                                  scale: "none",
+                                  transform: "translate(0px, 0%)",
+                                }}
                               >
-                                <defs data-v-9c24d646=" ">
+                                <svg
+                                  data-v-4bd6f78a=" "
+                                  width="195 "
+                                  height="194 "
+                                  viewBox="0 0 195 194 "
+                                  fill="none "
+                                  xmlns="http://www.w3.org/2000/svg "
+                                  className="w-100 h-100 "
+                                >
+                                  <ellipse
+                                    data-v-4bd6f78a=" "
+                                    cx="97.0409 "
+                                    cy="96.8766 "
+                                    rx="76.4975 "
+                                    ry="76.2338 "
+                                    transform="rotate(-18.8688 97.0409 96.8766) "
+                                    fill="#473D36 "
+                                  ></ellipse>
                                   <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath320 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                                    data-v-4bd6f78a=" "
+                                    d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                    stroke="#473D36 "
+                                    stroke-width="2.45915 "
+                                    stroke-linecap="round "
                                   ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath320 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Chungi
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Boba "Van Gogh " Director
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Chungi "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="134.577 "
+                                    cy="85.9991 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 134.577 85.9991) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="117.053 "
+                                    cy="85.2973 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 117.053 85.2973) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                    fill="#F3EFE6 "
+                                  ></path>
+                                </svg>
+                              </div>
                             </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.2 "
-                            style={stylesE30}
-                          >
                             <div
+                              data-v-4bd6f78a=" "
+                              data-v-5a623b3d=" "
+                              data-id="waypoint-299 "
+                              className="synchronized-waypoint floating-bubble bubble bubble-3 "
                               data-v-9c24d646=" "
-                              className="position-relative "
+                              style={{
+                                translate: "none",
+                                rotate: "none",
+                                scale: "none",
+                                transform:
+                                  "translate3d(0.7979%, -22.2875%, 0px) rotate(11.8518deg)",
+                              }}
                             >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
+                              <div
+                                data-v-4bd6f78a=" "
+                                className="wrapper "
+                                style={{
+                                  opacity: 0,
+                                  translate: "none",
+                                  rotate: "none",
+                                  scale: "none",
+                                  transform:
+                                    "translate(0px, -20%) scale(0, 0)",
+                                }}
                               >
-                                <defs data-v-9c24d646=" ">
+                                <svg
+                                  data-v-4bd6f78a=" "
+                                  width="195 "
+                                  height="194 "
+                                  viewBox="0 0 195 194 "
+                                  fill="none "
+                                  xmlns="http://www.w3.org/2000/svg "
+                                  className="w-100 h-100 "
+                                >
+                                  <ellipse
+                                    data-v-4bd6f78a=" "
+                                    cx="97.0409 "
+                                    cy="96.8766 "
+                                    rx="76.4975 "
+                                    ry="76.2338 "
+                                    transform="rotate(-18.8688 97.0409 96.8766) "
+                                    fill="#473D36 "
+                                  ></ellipse>
                                   <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath322 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                                    data-v-4bd6f78a=" "
+                                    d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                    stroke="#473D36 "
+                                    stroke-width="2.45915 "
+                                    stroke-linecap="round "
                                   ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath322 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Doug
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Chief Boba Tech Wiz "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Doug "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.30000000000000004 "
-                            style={stylesE30}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="134.577 "
+                                    cy="85.9991 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 134.577 85.9991) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="117.053 "
+                                    cy="85.2973 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 117.053 85.2973) "
+                                    fill="#473D36 "
+                                  ></circle>
                                   <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath324 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                                    data-v-4bd6f78a=" "
+                                    d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                    fill="#F3EFE6 "
                                   ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath324 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Mitch
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      "Boba Hype Man "
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Mitch "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
+                                </svg>
+                              </div>
                             </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.4 "
-                            style={stylesE29}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath326 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath326 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Olivia
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Happiness flavor creator
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE23}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Olivia "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.5 "
-                            style={stylesE28}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath328 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath328 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Nick
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      Boba Fortune Teller
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesF7}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Nick "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
-                          </div>
-                          <div
-                            data-v-9c24d646=" "
-                            data-v-5a623b3d=" "
-                            className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
-                            data-preset="opacity,y "
-                            data-delay="0.6000000000000001 "
-                            style={stylesE27}
-                          >
-                            <div
-                              data-v-9c24d646=" "
-                              className="position-relative "
-                            >
-                              <svg
-                                data-v-9c24d646=" "
-                                width="300 "
-                                height="300 "
-                                viewBox="0 0 300 300 "
-                                fill="none "
-                                xmlns="http://www.w3.org/2000/svg "
-                              >
-                                <defs data-v-9c24d646=" ">
-                                  <path
-                                    data-v-9c24d646=" "
-                                    fill="transparent "
-                                    id="circlePath330 "
-                                    d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
-                                  ></path>
-                                </defs>
-                                <text data-v-9c24d646=" " fill="#000 ">
-                                  <textPath
-                                    data-v-9c24d646=" "
-                                    startOffset="22% "
-                                    text-anchor="middle "
-                                    xlinkHref="#circlePath330 "
-                                    className="svg-text pp-bold "
-                                  >
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-name "
-                                    >
-                                      Mary
-                                    </tspan>
-                                    <tspan
-                                      data-v-9c24d646=" "
-                                      className="member-position founders "
-                                    >
-                                      The Ice Cream Professor
-                                    </tspan>
-                                  </textPath>
-                                </text>
-                              </svg>
-                              <figure
-                                data-v-23b40a86=" "
-                                data-v-9c24d646=" "
-                                className="spd overflow-hidden position-relative "
-                                style={stylesE23}
-                              >
-                                <div data-v-23b40a86=" " className=" ">
-                                  <picture data-v-23b40a86=" ">
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1920px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:1200px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:768px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <source
-                                      data-v-23b40a86=" "
-                                      media="(min-width:0px) "
-                                      srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
-                                    2x "
-                                    />
-                                    <img
-                                      data-v-23b40a86=" "
-                                      draggable="false "
-                                      loading="eager "
-                                      alt="Mary "
-                                      className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
-                                    />
-                                  </picture>
-                                </div>
-                              </figure>
-                            </div>
-                            <div data-v-9c24d646=" " className="slot "></div>
                           </div>
                         </div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="300 "
+                        style={stylesE19}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath300 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="20% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath300 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Chungi
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Boba "Van Gogh " Director
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Chungi "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot ">
+                          <div
+                            data-v-4bd6f78a=" "
+                            data-v-5a623b3d=" "
+                            data-id="waypoint-303 "
+                            className="synchronized-waypoint floating-bubble bubble "
+                            data-v-9c24d646=" "
+                            // style={{
+                            //   translate: "none",
+                            //   rotate: "none",
+                            //   scale: "none",
+                            //   transform:
+                            //     "translate3d(-6.3203%, -36.051%, 0px) rotate(11.8518deg)",
+                            // }}
+                            style={transformStyle}
+                          >
+                            <div
+                              data-v-4bd6f78a=" "
+                              className="wrapper "
+                              style={{
+                                opacity: 1,
+                                translate: "none",
+                                rotate: "none",
+                                scale: "none",
+                                transform: "translate(0px, 0%) ",
+                              }}
+                            >
+                              <svg
+                                data-v-4bd6f78a=" "
+                                width="195 "
+                                height="194 "
+                                viewBox="0 0 195 194 "
+                                fill="none "
+                                xmlns="http://www.w3.org/2000/svg "
+                                className="w-100 h-100 "
+                              >
+                                <ellipse
+                                  data-v-4bd6f78a=" "
+                                  cx="97.0409 "
+                                  cy="96.8766 "
+                                  rx="76.4975 "
+                                  ry="76.2338 "
+                                  transform="rotate(-18.8688 97.0409 96.8766) "
+                                  fill="#E07390 "
+                                ></ellipse>
+                                <path
+                                  data-v-4bd6f78a=" "
+                                  d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                  stroke="#473D36 "
+                                  stroke-width="2.45915 "
+                                  stroke-linecap="round "
+                                ></path>
+                                <circle
+                                  data-v-4bd6f78a=" "
+                                  cx="134.577 "
+                                  cy="85.9991 "
+                                  r="2.11028 "
+                                  transform="rotate(-18.8688 134.577 85.9991) "
+                                  fill="#473D36 "
+                                ></circle>
+                                <circle
+                                  data-v-4bd6f78a=" "
+                                  cx="117.053 "
+                                  cy="85.2973 "
+                                  r="2.11028 "
+                                  transform="rotate(-18.8688 117.053 85.2973) "
+                                  fill="#473D36 "
+                                ></circle>
+                                <path
+                                  data-v-4bd6f78a=" "
+                                  d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                  fill="#F3EFE6 "
+                                ></path>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="600 "
+                        style={stylesE20}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath304 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="40% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath304 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Doug
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Chief Boba Tech Wiz "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Doug "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="900 "
+                        style={stylesE21}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath306 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="20% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath306 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Mitch
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Boba Hype Man "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mitch "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="1200 "
+                        style={stylesE22}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath308 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="25% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath308 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Olivia
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Happiness flavor creator
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE23}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Olivia "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot ">
+                          <div
+                            data-v-5a623b3d=" "
+                            data-v-9c24d646=" "
+                            className="bubble-wrapper-4 "
+                          >
+                            <div
+                              data-v-4bd6f78a=" "
+                              data-v-5a623b3d=" "
+                              data-id="waypoint-311 "
+                              className="synchronized-waypoint floating-bubble bubble bubble-1 "
+                              data-v-9c24d646=" "
+                              //   style={{
+                              //     translate: "none",
+                              //     rotate: "none",
+                              //     scale: "none",
+                              //     transform:
+                              //       "translate3d(-4.1728%, -28.6906%, 0px) rotate(11.8518deg)",
+                              //   }}
+                              style={transformStyle}
+                            >
+                              <div
+                                data-v-4bd6f78a=" "
+                                className="wrapper "
+                                style={{
+                                  opacity: 1,
+                                  translate: "none",
+                                  rotate: "none",
+                                  scale: "none",
+                                  transform: "translate(0px, 0%)",
+                                }}
+                              >
+                                <svg
+                                  data-v-4bd6f78a=" "
+                                  width="195 "
+                                  height="194 "
+                                  viewBox="0 0 195 194 "
+                                  fill="none "
+                                  xmlns="http://www.w3.org/2000/svg "
+                                  className="w-100 h-100 "
+                                >
+                                  <ellipse
+                                    data-v-4bd6f78a=" "
+                                    cx="97.0409 "
+                                    cy="96.8766 "
+                                    rx="76.4975 "
+                                    ry="76.2338 "
+                                    transform="rotate(-18.8688 97.0409 96.8766) "
+                                    fill="#473D36 "
+                                  ></ellipse>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                    stroke="#473D36 "
+                                    stroke-width="2.45915 "
+                                    stroke-linecap="round "
+                                  ></path>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="134.577 "
+                                    cy="85.9991 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 134.577 85.9991) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="117.053 "
+                                    cy="85.2973 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 117.053 85.2973) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                    fill="#F3EFE6 "
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              data-v-4bd6f78a=" "
+                              data-v-5a623b3d=" "
+                              data-id="waypoint-313 "
+                              className="synchronized-waypoint floating-bubble bubble bubble-2 "
+                              data-v-9c24d646=" "
+                              //   style={{
+                              //     translate: "none",
+                              //     rotate: "none",
+                              //     scale: "none",
+                              //     transform:
+                              //       "translate3d(7.6522%, 36.969%, 0px) rotate(11.8518deg)",
+                              //   }}
+                              style={transformStyle}
+                            >
+                              <div
+                                data-v-4bd6f78a=" "
+                                className="wrapper "
+                                style={{
+                                  opacity: 1,
+                                  translate: "none",
+                                  rotate: "none",
+                                  scale: "none",
+                                  transform: "translate(0px, 0%)",
+                                }}
+                              >
+                                <svg
+                                  data-v-4bd6f78a=" "
+                                  width="195 "
+                                  height="194 "
+                                  viewBox="0 0 195 194 "
+                                  fill="none "
+                                  xmlns="http://www.w3.org/2000/svg "
+                                  className="w-100 h-100 "
+                                >
+                                  <ellipse
+                                    data-v-4bd6f78a=" "
+                                    cx="97.0409 "
+                                    cy="96.8766 "
+                                    rx="76.4975 "
+                                    ry="76.2338 "
+                                    transform="rotate(-18.8688 97.0409 96.8766) "
+                                    fill="#473D36 "
+                                  ></ellipse>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M121.464 98.397C123.664 102.725 129.567 101.598 130.985 98.4894 "
+                                    stroke="#473D36 "
+                                    stroke-width="2.45915 "
+                                    stroke-linecap="round "
+                                  ></path>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="134.577 "
+                                    cy="85.9991 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 134.577 85.9991) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <circle
+                                    data-v-4bd6f78a=" "
+                                    cx="117.053 "
+                                    cy="85.2973 "
+                                    r="2.11028 "
+                                    transform="rotate(-18.8688 117.053 85.2973) "
+                                    fill="#473D36 "
+                                  ></circle>
+                                  <path
+                                    data-v-4bd6f78a=" "
+                                    d="M73.7871 55.8807C88.559 55.8807 88.559 47.4581 88.559 39.6372C88.559 47.4581 88.559 55.8807 103.331 55.8807C88.559 55.8807 88.559 66.7098 88.559 73.9292C88.559 66.7098 88.559 55.8807 73.7871 55.8807Z "
+                                    fill="#F3EFE6 "
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="1500 "
+                        style={stylesE24}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath314 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="40% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath314 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Nick
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Boba Fortune Teller
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Nick "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-1 should-animate "
+                        data-preset="x "
+                        data-fromx="1800 "
+                        style={stylesE25}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath316 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="15% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath316 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Mary
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  The Ice Cream Professor
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE23}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mary "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                    </div>
+
+                    <div
+                      data-v-5a623b3d=" "
+                      className="d-lg-none row justify-content-center "
+                    >
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0 "
+                        style={stylesE30}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath318 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath318 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Charn
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Chief happiness maker "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE18}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/2nS8l1zyDuEeJ9hXA0lSNv/00d0c0fdbb6216f9a821804ea67e8f98/charn.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Charn "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.1 "
+                        style={stylesE30}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath320 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath320 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Chungi
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Boba "Van Gogh " Director
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/OHjjaa0WpS3PqmVRr5Jf5/d5b5d9de94a5120203de45a1631b2dbc/chungi.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Chungi "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.2 "
+                        style={stylesE30}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath322 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath322 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Doug
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Chief Boba Tech Wiz "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/6WcfxO0uBNFj0WrRsMMm7p/62a88e3cd703b9c2cb54b8db7404cd9f/doug.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Doug "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.30000000000000004 "
+                        style={stylesE30}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath324 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath324 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Mitch
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  "Boba Hype Man "
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/1xmd7KLuSATQyhRRFZuQ9z/b397b159f0c4cd6f116a5dd50338e43e/mitch.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mitch "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.4 "
+                        style={stylesE29}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath326 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath326 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Olivia
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Happiness flavor creator
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE23}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/3KSldI7gMRmNRUqRWbI0rG/32e3aa366b4e08633a2989183fa2d0a3/olivia.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Olivia "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.5 "
+                        style={stylesE28}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath328 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath328 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Nick
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  Boba Fortune Teller
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesF7}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4CdNqB4TsvNBIau4olkGia/aa7f9416292e0b8d0f735cddeceb0e31/nick.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Nick "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                      <div
+                        data-v-9c24d646=" "
+                        data-v-5a623b3d=" "
+                        className="team-member position-relative d-inline-block p-0-5 mb-3-5 should-animate "
+                        data-preset="opacity,y "
+                        data-delay="0.6000000000000001 "
+                        style={stylesE27}
+                      >
+                        <div
+                          data-v-9c24d646=" "
+                          className="position-relative "
+                        >
+                          <svg
+                            data-v-9c24d646=" "
+                            width="300 "
+                            height="300 "
+                            viewBox="0 0 300 300 "
+                            fill="none "
+                            xmlns="http://www.w3.org/2000/svg "
+                          >
+                            <defs data-v-9c24d646=" ">
+                              <path
+                                data-v-9c24d646=" "
+                                fill="transparent "
+                                id="circlePath330 "
+                                d="M0,150a150,150 0 1,0 300,0a150,150 0 1,0 -300,0 "
+                              ></path>
+                            </defs>
+                            <text data-v-9c24d646=" " fill="#000 ">
+                              <textPath
+                                data-v-9c24d646=" "
+                                startOffset="22% "
+                                text-anchor="middle "
+                                xlinkHref="#circlePath330 "
+                                className="svg-text pp-bold "
+                              >
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-name "
+                                >
+                                  Mary
+                                </tspan>
+                                <tspan
+                                  data-v-9c24d646=" "
+                                  className="member-position founders "
+                                >
+                                  The Ice Cream Professor
+                                </tspan>
+                              </textPath>
+                            </text>
+                          </svg>
+                          <figure
+                            data-v-23b40a86=" "
+                            data-v-9c24d646=" "
+                            className="spd overflow-hidden position-relative "
+                            style={stylesE23}
+                          >
+                            <div data-v-23b40a86=" " className=" ">
+                              <picture data-v-23b40a86=" ">
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1920px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1050&amp;w=1050&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1365&amp;w=1365&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:1200px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=800&amp;w=800&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=1040&amp;w=1040&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:768px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=500&amp;w=500&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=650&amp;w=650&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <source
+                                  data-v-23b40a86=" "
+                                  media="(min-width:0px) "
+                                  srcset=" https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=300&amp;w=300&amp;q=80&amp;&amp;fm=webp&amp;q=80 1x, https://images.ctfassets.net/j8k8klriwj2h/4kxeFFIwBRw7Dw9cHfXAZ/ba79c580f6cc27d739fc1d2330efb24a/mary.png?h=390&amp;w=390&amp;q=80&amp;&amp;fm=webp&amp;q=80
+                                    2x "
+                                />
+                                <img
+                                  data-v-23b40a86=" "
+                                  draggable="false "
+                                  loading="eager "
+                                  alt="Mary "
+                                  className="w-100 h-100 position-absolute t-0 l-0 picture cover bg-center "
+                                />
+                              </picture>
+                            </div>
+                          </figure>
+                        </div>
+                        <div data-v-9c24d646=" " className="slot "></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                
+
                 <div
                   className="big-circles-and-round-text position-relative"
                   data-v-f223df8c=""
-                  
+
                 >
                   <div
                     data-id="waypoint-131"
                     className="synchronized-waypoint"
                     data-v-f223df8c=""
                   ></div>
-               <div ref={ref} className="scroll-trigger" />
+                  <div ref={ref} className="scroll-trigger" />
 
                   <div
                     className="big-circle-and-round-text-svg circles-svg position-relative d-none d-sm-block "
@@ -6773,7 +6766,7 @@ const OurStory = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     class="circles-svg position-relative d-sm-none"
                     data-v-f223df8c=""
-                    
+
                   >
                     <ellipse
                       cx="352"
@@ -7147,9 +7140,9 @@ const OurStory = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     data-v-16c2f99a=""
-          data-v-f223df8c=""
+                    data-v-f223df8c=""
                     class={`curved-text curved-text curved-text--top ${isVisible ? 'supporting' : ''}`}
-           ref={textPathRef}
+                    ref={textPathRef}
                   >
                     <defs data-v-16c2f99a="">
                       <path
@@ -7168,8 +7161,8 @@ const OurStory = () => {
                         startOffset="25%"
                         text-anchor="middle"
                         xlinkHref="#clip-path-134"
-              data-v-16c2f99a=""
-             
+                        data-v-16c2f99a=""
+
                       >
                         SUPPORTING
                       </textPath>
@@ -7181,8 +7174,8 @@ const OurStory = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     class={`curved-text curved-text curved-text--bottom ${isVisible ? 'communities' : ''}`}
                     data-v-16c2f99a=""
-          data-v-f223df8c=""
-          ref={textPathRef}
+                    data-v-f223df8c=""
+                    ref={textPathRef}
                   >
                     <defs data-v-16c2f99a="">
                       <path
@@ -7201,8 +7194,8 @@ const OurStory = () => {
                         startOffset="25%"
                         text-anchor="middle"
                         xlinkHref="#clip-path-135"
-              data-v-16c2f99a=""
-              
+                        data-v-16c2f99a=""
+
                       >
                         OUR COMMUNITIES
                       </textPath>
@@ -7216,7 +7209,7 @@ const OurStory = () => {
                     data-v-f223df8c=""
                   />
                 </div>
-                
+
                 <div
                   data-id="waypoint-138"
                   className="synchronized-waypoint newsletter-component position-relative z-4 pb-1 color-yellow pp-bold text-center text-uppercase d-flex flex-column justify-content-between overflow-hidden"
@@ -7554,12 +7547,13 @@ const OurStory = () => {
                       data-v-20b31861=" "
                       className="hash-wrapper mb-3 mb-md-0 "
                     >
-                      <Fade direction="up">
-                        <div
+                      <div
                         data-v-20b31861=" "
                         data-preset="y "
                         data-delay=".1 "
                         className="position-relative should-animate hash-bg "
+                        data-aos="fade-up"
+                        data-aos-duration="1500"
                         style={{ opacity: 1 }}
                       >
                         <img
@@ -7589,7 +7583,6 @@ const OurStory = () => {
                           style={{ opacity: 1 }}
                         />
                       </div>
-                      </Fade>
                     </div>
                     <div data-v-20b31861=" " className="col-12 d-flex ">
                       <div
@@ -7854,81 +7847,80 @@ const OurStory = () => {
                     data-v-20b31861=" "
                     data-id="waypoint-361 "
                     className="synchronized-waypoint "
-                    
+
                   >
-                    <Fade direction="up">
-                      <div
+                    <div
                       data-v-20b31861="ade-up"
                       data-preset="opacity,y "
                       data-delay=".1 "
                       className="f5 f9-1-sm f6-xl color-red2 pp-bold text-center mt-2 mt-md-3 mt-lg-2 px-0-5 px-md-1-5 px-lg-6 pb-3 pb-md-7-5 pb-lg-10 should-animate"
-                      
+                      data-aos="fade-up"
+                      data-aos-duration="1500"
                       style={{ opacity: 1 }}
-                      
+
                     >
                       PROUDLY AAPI⁃OWNED! A PORTION OF THE PROCEEDS, OF EVERY
                       PINT SOLD, GOES TO SUPPORT AAPI COMMUNITIES IN NEED.
                     </div>
-                    </Fade>
                   </div>
                 </div>
-                 <div
+                <div
                   data-id="waypoint-116"
                   className="synchronized-waypoint page-footer bg-yellow px-0-5 px-lg-2 py-1 py-lg-2"
                   data-v-709f7a56=""
                 >
                   <Fade direction="up">
                     <div
-                    data-preset="y"
-                    data-delay=".2"
-                    className="row justify-content-center justify-content-sm-between should-animate"
-                    data-v-709f7a56
-                    style={{ opacity: 1 }}
-                    
-                  >
-                    <a
-                      href="/"
-                      aria-current="page"
-                      className="mb-1 mb-sm-0 logo-wrapper router-link-exact-active router-link-active"
-                      data-v-709f7a56=""
-                      style={{ color: "#ea1b0e !important" }}
-                    >
-                      <img
-                        src={Logo}
-                        width="172"
-                        height="26"
-                        alt="Boba Logo"
-                        className="logo"
-                        data-v-709f7a56=""
-                      />
-                    </a>
-                    <div
-                      className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom"
-                      data-v-709f7a56=""
+                      data-preset="y"
+                      data-delay=".2"
+                      className="row justify-content-center justify-content-sm-between should-animate"
+                      data-v-709f7a56
+                      style={{ opacity: 1 }}
+
                     >
                       <a
-                        href="/privacy-policy"
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                        href="/"
+                        aria-current="page"
+                        className="mb-1 mb-sm-0 logo-wrapper router-link-exact-active router-link-active"
+                        data-v-709f7a56=""
+                        style={{ color: "#ea1b0e !important" }}
+                      >
+                        <img
+                          src={Logo}
+                          width="172"
+                          height="26"
+                          alt="Boba Logo"
+                          className="logo"
+                          data-v-709f7a56=""
+                        />
+                      </a>
+                      <div
+                        className="d-flex col-12 col-sm justify-content-between justify-content-sm-end align-items-center gutter-custom"
                         data-v-709f7a56=""
                       >
-                        Privacy Policy
-                      </a>
-                      <a
-                        href="/terms-and-conditions"
-                        className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
-                        data-v-709f7a56=""
-                      >
-                        Terms &amp; Conditions
-                      </a>
+                        <a
+                          href="/privacy-policy"
+                          className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                          data-v-709f7a56=""
+                        >
+                          Privacy Policy
+                        </a>
+                        <a
+                          href="/terms-and-conditions"
+                          className="text-uppercase f8 f12-sm f11-xl founders-semibold link mx-sm-0-75 no-wrap"
+                          data-v-709f7a56=""
+                        >
+                          Terms &amp; Conditions
+                        </a>
+                      </div>
                     </div>
-                  </div>
                   </Fade>
                 </div>
-                
+
               </div>
             </div>
-            </div>
-            
+          </div>
+
         </main>
       </div>
     </div>
